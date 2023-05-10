@@ -19,6 +19,10 @@
   color: #f89c1d;
 }
 
+.selected {
+  color: #f89c1d;
+}
+
 @media all and (max-width:769px) {
   .IYMAIN {
     display: flex;
