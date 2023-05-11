@@ -1,19 +1,12 @@
-import ReactPlayer from 'react-player';
 import Nav from '@/components/Nav/Nav';
-// import Nav from "../Nav/Nav";
 import Video from '@/components/Video/video';
-
 function VideoPlayer() {
-  return (
-    <>
-      <Nav />
-      <Video/>
-
-      
-
-
-    </>
-  );
+    return (
+        <>
+            <Nav/>
+            <Video/>
+        </>
+    );
 }
 
 export default VideoPlayer;
