@@ -12,14 +12,13 @@ import {useRouter} from 'next/router';
 function videoNewsed(props) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter();
-    console.log(props);
-    const data = JSON.parse(props.data);
+    const data = JSON.parse(decodeURIComponent(router.query.videoNews));
     return (
         <>
             <NextSeo
                 title={data.NewsTittle}
                 description={data.NewsSubTittle}
-                canonical={process.env.NEXT_PUBLIC_API_URL + data.VideoPath}
+                canonical={process.env.NEXT_PUBLIC_API_URL + data.NewsTittle}
                 openGraph={{
                     url: process.env.NEXT_PUBLIC_API_URL + data.VideoPath,
                     title: data.NewsTittle,

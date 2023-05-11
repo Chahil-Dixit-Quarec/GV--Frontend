@@ -11,11 +11,12 @@ function Video() {
     const [recived, setRecived] = useState([]);
     const handleClick = async (e) => {
         console.log(e);
+        console.log(encodeURIComponent(JSON.stringify(e)));
         await router.push({
             pathname: "/video/[videoNews]",
-            query: {videoNews: JSON.stringify(e)},
+            query: {videoNews: encodeURIComponent(JSON.stringify(e))},
             options: {shallow: true}
-        }, `/video?id=${e._id}`)
+        })
     }
     useEffect(() => {
         axios
