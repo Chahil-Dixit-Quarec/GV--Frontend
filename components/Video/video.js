@@ -19,6 +19,7 @@ function Video() {
     useEffect(() => {
         axios
             .get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getAllVideoData").then(async (response) => {
+            console.log(response.data);
             await setRecived(response.data);
         })
     }, [])
