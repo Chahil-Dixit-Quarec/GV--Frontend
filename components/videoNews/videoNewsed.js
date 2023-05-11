@@ -10,6 +10,7 @@ import {NextSeo} from 'next-seo';
 import {useRouter} from 'next/router';
 
 function videoNewsed(props) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter();
     console.log(props);
     const data = JSON.parse(props.data);
