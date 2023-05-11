@@ -13,8 +13,9 @@ function Video() {
         console.log(e);
         await router.push({
             pathname: "/video/[videoNews]",
-            query: {videoNews: JSON.stringify(e)}
-        });
+            query: {videoNews: JSON.stringify(e)},
+            options: {shallow: true}
+        }, `/video`)
     }
     useEffect(() => {
         axios
@@ -23,7 +24,6 @@ function Video() {
             await setRecived(response.data);
         })
     }, [])
-    // console.log(process.env.NEXT_PUBLIC_API_URL + "Video//Videoimages//2023//4//14/corona27032023.jpg");
 
     return (
         <div className={styles.Tagbody}>

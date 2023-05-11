@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import styles from "../styles/search.module.css"
 import Nav from "@/components/Nav/Nav";
 import axios from "axios";
 import Bottom from "../components/BottomNAV/Bottom"
+
 function Search() {
     const [searchText, setSearchText] = useState("");
     const [filteredResults, setFilteredResults] = useState([]);
@@ -18,19 +19,8 @@ function Search() {
             );
             setFilteredResults(filteredData);
         };
-
         filterData();
-
-
-
-
     };
-
-    //   if (searchText == ""){
-    //     filterData();
-
-    // }
-
 
     useEffect(() => {
         axios
@@ -39,22 +29,20 @@ function Search() {
                 console.log("new", response.data.data[0].SubCategory[0]);
 
                 const refre = await response.data.data.map((item, index) => {
-                    return { engCate: item.Category.EngCategory, gujCategory: item.Category.GujCategory }
+                    return {engCate: item.Category.EngCategory, gujCategory: item.Category.GujCategory}
+                });
+                setDatas(refre);
 
-                })
-
-                setDatas(refre)
                 console.log(datas);
-
-
                 console.log("refre", refre);
-
-
-
-
                 const refres = await Promise.all(response.data.data.map(async (item, index) => {
                     const subCategories = await Promise.all(item.SubCategory.map(async (ite, index) => {
-                        return { engCate: item.Category.EngCategory, gujCategory: item.Category.GujCategory, engSubCate: ite.EngSubCategory, gujSubCategory: ite.GujSubCategory };
+                        return {
+                            engCate: item.Category.EngCategory,
+                            gujCategory: item.Category.GujCategory,
+                            engSubCate: ite.EngSubCategory,
+                            gujSubCategory: ite.GujSubCategory
+                        };
                     }));
                     return subCategories;
                 }));
@@ -62,73 +50,20 @@ function Search() {
                 const result = refres.reduce((acc, curr) => {
                     return [...acc, ...curr];
                 }, []);
-
                 console.log("refres", result);
-
                 setResData(result)
-
-
                 setFilteredResults([...refre, ...result])
-
-
-
-
             })
-
-
-
-
-        // setFilteredResults(combinedData)
-
-
-        // console.log("datas",datas);
-
-
-
-
-        //    resdata.map(async (item, index)=> {
-        //             return await item.Category.EngCategory
-
-        //           })
-
-
-        //   setDatas(refre)
-
-        // setFilteredResults(refre)
-
-        // filterData();
-        // const neti = async () => {
-        //         const combinedData =  [...datas, ...resdata];
-        //         console.log("combinedData", combinedData);
-
-        //         await setFilteredResults(combinedData)
-        //         console.log(filteredResults);
-
-        //     }
-
-        //     neti();
-
-
     }, [searchText == ""]);
-
-
-
-
 
     const dataSend = async (e) => {
         console.log("e", e);
-
         window.location.href = e;
-        // await router.replace(e);
-
-        // window.location.reload();
     }
-
-
 
     return (
         <>
-            <Nav />
+            <Nav/>
             <div className={styles.MHSf9671}>
                 <div className={styles.JAS81}>
 
@@ -141,19 +76,18 @@ function Search() {
                     />
                     <div className={styles.Serchitems091}>
                         {filteredResults.map((item) => (
-                            // {console.log(item)}
                             <p className={styles.Ngah61} key={item.id} onClick={(e) => {
                                 dataSend("/category/" + `${item.engCate}`);
                             }}>
                                 {item.gujSubCategory ? item.gujSubCategory : item.gujCategory}
-                                {/* {item.gujCategory}  */}
                             </p>
                         ))}
                     </div>
                 </div>
             </div>
-            <Bottom />
+            <Bottom/>
         </>
     );
 }
+
 export default Search;
