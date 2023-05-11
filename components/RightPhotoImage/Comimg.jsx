@@ -26,5 +26,5 @@ function Comimg() {
     </>
   );
 }
-
-export default Comimg;
+export default React.memo(Comimg);
+// export default Comimg;

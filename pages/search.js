@@ -12,7 +12,6 @@ function Search() {
 
     const handleInputChange = (event) => {
         setSearchText(event.target.value);
-
         const filterData = () => {
             const filteredData = datas.filter((item) =>
                 item.engCate.toLowerCase().includes(searchText.toLowerCase())
@@ -26,15 +25,10 @@ function Search() {
         axios
             .get(process.env.NEXT_PUBLIC_API_BASE_URL + "/GetSubCategory")
             .then(async (response) => {
-                console.log("new", response.data.data[0].SubCategory[0]);
-
                 const refre = await response.data.data.map((item, index) => {
                     return {engCate: item.Category.EngCategory, gujCategory: item.Category.GujCategory}
                 });
                 setDatas(refre);
-
-                console.log(datas);
-                console.log("refre", refre);
                 const refres = await Promise.all(response.data.data.map(async (item, index) => {
                     const subCategories = await Promise.all(item.SubCategory.map(async (ite, index) => {
                         return {
@@ -50,15 +44,12 @@ function Search() {
                 const result = refres.reduce((acc, curr) => {
                     return [...acc, ...curr];
                 }, []);
-                console.log("refres", result);
                 setResData(result)
                 setFilteredResults([...refre, ...result])
             })
     }, [searchText == ""]);
-
     const dataSend = async (e) => {
-        console.log("e", e);
-        window.location.href = e;
+        window.location.href = `/category/${e.engSubCate ? e.engSubCate : e.engCate}`;
     }
 
     return (
@@ -66,7 +57,6 @@ function Search() {
             <Nav/>
             <div className={styles.MHSf9671}>
                 <div className={styles.JAS81}>
-
                     <input
                         className={styles.vbgae12}
                         type="text"
@@ -75,9 +65,9 @@ function Search() {
                         onChange={handleInputChange}
                     />
                     <div className={styles.Serchitems091}>
-                        {filteredResults.map((item) => (
-                            <p className={styles.Ngah61} key={item.id} onClick={(e) => {
-                                dataSend("/category/" + `${item.engCate}`);
+                        {filteredResults.map((item, index) => (
+                            <p className={styles.Ngah61} key={index} onClick={(e) => {
+                                dataSend(item);
                             }}>
                                 {item.gujSubCategory ? item.gujSubCategory : item.gujCategory}
                             </p>

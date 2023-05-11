@@ -57,9 +57,7 @@ function videoNewsed(props) {
                               className={styles.linkSimple}/>
                     </div>
                     <div className={`${styles.icon} ${styles.link}`} onClick={(e) => {
-                        router.push({
-                            pathname: "/video"
-                        });
+                        router.back();
                     }}>
                         <Icon style={{height: "31px", width: "38px", marginTop: "10%"}} icon={roundClose}
                               className={styles.linkSimple}/>
