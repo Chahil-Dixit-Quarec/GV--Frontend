@@ -15,7 +15,7 @@ function Video() {
             pathname: "/video/[videoNews]",
             query: {videoNews: JSON.stringify(e)},
             options: {shallow: true}
-        }, `/video`)
+        }, `/video?id=${e._id}`)
     }
     useEffect(() => {
         axios
