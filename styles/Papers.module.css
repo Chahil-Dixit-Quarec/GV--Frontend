@@ -13,6 +13,7 @@
 
 .upload {
   width: 12.5%;
+  height: 200px; 
   float: left;
   margin: 10px 14px 0px 14px;
 }
