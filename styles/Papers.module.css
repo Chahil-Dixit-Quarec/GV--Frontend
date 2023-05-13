@@ -1,30 +1,33 @@
 .EPapers {
   border-bottom: 3px solid #000;
 }
+
 .EPapers h2 {
   font-size: 25px;
   margin-top: 8%;
 }
+
 .Collection {
   margin: 0px;
 }
+
 .upload {
   width: 12.5%;
   float: left;
   margin: 10px 14px 0px 14px;
 }
+
 .upload img {
-  height: auto;
+  height: 150px;
   width: 100%;
 }
+
 .upload p {
   font-size: 10px;
   text-align: center;
-  background: linear-gradient(
-    180deg,
-    #ffffff 63.85%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      #ffffff 63.85%,
+      rgba(255, 255, 255, 0) 100%);
   box-shadow: 4px 3px 2px 1px rgba(0, 0, 0, 0.119);
 }
 
@@ -35,6 +38,7 @@
     margin: 10px 9px 0px 9px;
   }
 }
+
 @media all and (max-width: 1330px) {
   .upload {
     width: 14.5%;
@@ -42,6 +46,7 @@
     margin: 10px 9px 0px 9px;
   }
 }
+
 @media all and (max-width: 1255px) {
   .upload {
     width: 15.5%;
@@ -49,6 +54,7 @@
     margin: 10px 15px 5px 9px;
   }
 }
+
 @media all and (max-width: 1110px) {
   .upload {
     width: 17.5%;
@@ -56,6 +62,7 @@
     margin: 10px 18px 0px 18px;
   }
 }
+
 @media all and (max-width: 980px) {
   .upload {
     width: 20.5%;
@@ -63,6 +70,7 @@
     margin: 10px 10px 0px 10px;
   }
 }
+
 @media all and (max-width: 904px) {
   .upload {
     width: 20.5%;
@@ -70,6 +78,7 @@
     margin: 10px 8px 0px 8px;
   }
 }
+
 @media all and (max-width: 890px) {
   .upload {
     width: 25.5%;
@@ -77,6 +86,7 @@
     margin: 10px 15px 0px 15px;
   }
 }
+
 @media all and (max-width: 840px) {
   .upload {
     width: 25.5%;
@@ -84,6 +94,7 @@
     margin: 10px 12px 0px 12px;
   }
 }
+
 @media all and (max-width: 700px) {
   .upload {
     width: 15.5%;
@@ -91,16 +102,19 @@
     margin: 10px 12px 0px 12px;
   }
 }
+
 @media all and (max-width: 580px) {
   .upload {
     width: 17.5%;
     float: left;
     margin: 10px 20px 0px 20px;
   }
+
   .EPapers h1 {
     font-size: 18px;
   }
 }
+
 @media all and (max-width: 545px) {
   .upload {
     width: 17.5%;
@@ -108,6 +122,7 @@
     margin: 10px 15px 0px 15px;
   }
 }
+
 @media all and (max-width: 510px) {
   .upload {
     width: 19.5%;
@@ -115,6 +130,7 @@
     margin: 10px 10px 0px 10px;
   }
 }
+
 @media all and (max-width: 460px) {
   .upload {
     width: 22.5%;
@@ -122,6 +138,7 @@
     margin: 10px 20px 0px 20px;
   }
 }
+
 @media all and (max-width: 400px) {
   .upload {
     width: 26.5%;
@@ -129,6 +146,7 @@
     margin: 10px 10px 0px 10px;
   }
 }
+
 @media all and (max-width: 340px) {
   .upload {
     width: 40.5%;
