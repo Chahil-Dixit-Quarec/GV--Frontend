@@ -17,6 +17,6 @@ body {
 }
 
 
-object {
+object, iframe {
   height: 100vh;
 }
