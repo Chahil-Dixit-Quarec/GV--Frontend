@@ -19,20 +19,19 @@ function Video() {
         console.log(encodeURIComponent(JSON.stringify(e)));
         await router.push({
             pathname: "/video/[videoNews]",
-            query: {videoNews: encodeURIComponent(JSON.stringify(e))},
-            options: {shallow: true}
+            query: {videoNews: encodeURIComponent(JSON.stringify(e))}
         })
     }
     useEffect(() => {
         axios
             .get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getAllVideoData").then(async (response) => {
             // console.log(response.data);
-            setRecived(response.data);
             console.log(isMobile);
-                if(isMobile) {
-                    console.log(response.data[0]);
-                    return handleClick(response.data[0]);
-                }
+            if (isMobile) {
+                console.log(response.data[0]);
+                return handleClick(response.data[0]);
+            }
+            setRecived(response.data);
         })
     }, [])
 
@@ -66,7 +65,7 @@ function Video() {
                                     <div className={styles.footer}>
                                         <div className={styles.Category}>{item.GujCategory}</div>
                                         <div className={styles.DateTime}>
-                                            <TimeAgo date={item.CreatedDate} formatter={formatter} />
+                                            <TimeAgo date={item.CreatedDate} formatter={formatter}/>
                                             {/*<TimeAgo timestamp={`${item.CreatedDate}`}/>*/}
                                         </div>
                                     </div>
