@@ -28,8 +28,8 @@ function RightPhotoImage(name) {
             }}>
                 <Image className={styles.KHUGUTF} src={process.env.NEXT_PUBLIC_API_URL + videoData.ImagePath} alt=""
                        width="280" height="540"/>
-                <p className={styles.JKUv}>વીડિયો</p>
-                <p className={styles.MKF9878}>વધુ જુઓ</p>
+                {/*<p className={styles.JKUv}>વીડિયો</p>*/}
+                {/*<p className={styles.MKF9878}>વધુ જુઓ</p>*/}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="50"

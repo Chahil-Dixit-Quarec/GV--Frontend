@@ -9,17 +9,15 @@ function Search() {
     const [filteredResults, setFilteredResults] = useState([]);
     const [resdata, setResData] = useState([]);
     const [datas, setDatas] = useState([]);
+    const [allData, setAllData] = useState([]);
 
     const handleInputChange = (event) => {
         setSearchText(event.target.value);
-        const filterData = () => {
-            const filteredData = datas.filter((item) =>
-                item.engCate.toLowerCase().includes(searchText.toLowerCase())
-            );
-            setFilteredResults(filteredData);
-        };
-        filterData();
-    };
+        const filteredData = allData.filter((item) =>
+            item.engSubCate?.toLowerCase().includes(searchText.toLowerCase()) ?? item.engCate.toLowerCase().includes(searchText.toLowerCase())
+        )
+        setFilteredResults(filteredData);
+    }
 
     useEffect(() => {
         axios
@@ -46,6 +44,7 @@ function Search() {
                 }, []);
                 setResData(result)
                 setFilteredResults([...refre, ...result])
+                setAllData([...refre, ...result]);
             })
     }, [searchText == ""]);
     const dataSend = async (e) => {

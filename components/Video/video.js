@@ -2,13 +2,18 @@ import React, {useEffect, useState} from "react"
 import styles from "../../styles/Video.module.css"
 import Image from 'next/image';
 import axios from "axios";
-import TimeAgo from "../Timeago/Timeago";
+// import TimeAgo from "../Timeago/Timeago";
 import {useRouter} from 'next/router';
 import Bottom from "../BottomNAV/Bottom"
+import TimeAgo from 'react-timeago';
+import En from 'react-timeago/lib/language-strings/en';
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter';
+import {isMobile} from 'react-device-detect';
 
 function Video() {
     const router = useRouter();
     const [recived, setRecived] = useState([]);
+    const formatter = buildFormatter(En)
     const handleClick = async (e) => {
         console.log(e);
         console.log(encodeURIComponent(JSON.stringify(e)));
@@ -21,8 +26,13 @@ function Video() {
     useEffect(() => {
         axios
             .get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getAllVideoData").then(async (response) => {
-            console.log(response.data);
-            await setRecived(response.data);
+            // console.log(response.data);
+            setRecived(response.data);
+            console.log(isMobile);
+                if(isMobile) {
+                    console.log(response.data[0]);
+                    return handleClick(response.data[0]);
+                }
         })
     }, [])
 
@@ -55,7 +65,9 @@ function Video() {
                                     <div className={styles.subtittle}>{item.NewsSubTittle} </div>
                                     <div className={styles.footer}>
                                         <div className={styles.Category}>{item.GujCategory}</div>
-                                        <div className={styles.DateTime}><TimeAgo timestamp={`${item.CreatedDate}`}/>
+                                        <div className={styles.DateTime}>
+                                            <TimeAgo date={item.CreatedDate} formatter={formatter} />
+                                            {/*<TimeAgo timestamp={`${item.CreatedDate}`}/>*/}
                                         </div>
                                     </div>
                                 </div>

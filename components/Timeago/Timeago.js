@@ -5,7 +5,7 @@ function TimeAgo({ timestamp }) {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const secondsAgo = Math.floor((new Date(timestamp) - new Date()) / 1000);
+      const secondsAgo = Math.floor((new Date() - new Date(timestamp)) / 1000);
       let interval = Math.floor(secondsAgo / 31536000);
       if (interval > 1) {
         setTimeAgo(`${interval} years ago`);

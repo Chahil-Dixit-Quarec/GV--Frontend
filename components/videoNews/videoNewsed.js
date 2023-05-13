@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/Videonews.module.css";
-import TimeAgo from "../Timeago/Timeago";
+// import TimeAgo from "../Timeago/Timeago";
 import {Icon} from '@iconify/react';
 import facebookFill from '@iconify/icons-ri/facebook-fill';
 import twitterIcon from '@iconify/icons-mdi/twitter';
@@ -8,11 +8,16 @@ import linkSimpleBold from '@iconify/icons-ph/link-simple-bold';
 import roundClose from '@iconify/icons-ic/round-close';
 import {NextSeo} from 'next-seo';
 import {useRouter} from 'next/router';
+import TimeAgo from 'react-timeago';
+import En from 'react-timeago/lib/language-strings/en';
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter';
+import {isMobile} from 'react-device-detect';
 
 function videoNewsed(props) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter();
     const data = JSON.parse(decodeURIComponent(router.query.videoNews));
+    const formatter = buildFormatter(En)
     return (
         <>
             <NextSeo
@@ -57,7 +62,11 @@ function videoNewsed(props) {
                               className={styles.linkSimple}/>
                     </div>
                     <div className={`${styles.icon} ${styles.link}`} onClick={(e) => {
-                        router.back();
+                        if (isMobile) {
+                            router.push('/');
+                        } else {
+                            router.back();
+                        }
                     }}>
                         <Icon style={{height: "31px", width: "38px", marginTop: "10%"}} icon={roundClose}
                               className={styles.linkSimple}/>
@@ -83,7 +92,8 @@ function videoNewsed(props) {
                     <div className={styles.subfooter}>
                         <div className={styles.sudata}>{data.GujCategory}</div>
                         <div className={styles.sudata}>
-                            <TimeAgo timestamp={data.CreatedDate}/>
+                            <TimeAgo date={data.CreatedDate} formatter={formatter} />
+                            {/*<TimeAgo timestamp={data.CreatedDate}/>*/}
                         </div>
                     </div>
                 </div>
