@@ -11,7 +11,7 @@ function viewPDF(item) {
         renderHTML = <iframe src={pdfFile} frameborder='0' height='500px' width = '100%' > < /iframe>;
     } else {
         renderHTML = <object data={pdfFile} type='application/pdf' width='100%' height='100vh'> +
-            <p>If you can't see the pdf, please <a href={pdfFile}>click here</a> to download to PDF </p></object>
+            <p>If you can&apos;t see the pdf, please <a href={pdfFile}>click here</a> to download to PDF </p></object>
     }
     return (
         <>
