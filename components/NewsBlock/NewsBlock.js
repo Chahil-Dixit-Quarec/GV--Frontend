@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import axios from "axios";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 // import { Helmet } from "react-helmet";
 // import img from "../../Image/HomePageIMage/raspred1.png";
 // import FullNews from "../../Component/FullNews/FullNews";
@@ -18,16 +18,14 @@ import { ToastContainer } from 'react-toastify';
 // import MetaDecorator from "../MetaTag/Metatag";
 
 function NewsBlock(props) {
-
   const facebookClick = (url) => {
     const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
     window.open(shareUrl, "_blank");
   };
 
-  
   const twitterClick = (url) => {
     const twitterUrl = `https://twitter.com/intent/tweet?url=${url}`;
-    window.open(twitterUrl, '_blank', 'width=550,height=420');
+    window.open(twitterUrl, "_blank", "width=550,height=420");
   };
   const router = useRouter();
   console.log("props", props.value.data);
@@ -49,7 +47,7 @@ function NewsBlock(props) {
       hideProgressBar: true,
       autoClose: 2000,
       type: "success",
-      position: 'bottom-right'
+      position: "bottom-right",
     });
     navigator.clipboard.writeText(url);
   };
@@ -62,10 +60,9 @@ function NewsBlock(props) {
     // window.location.href = url
 
     if (props.value.unique == true) {
-
       await router.push({
         pathname: "/category/[maincategory]/[fullnews]",
-        query: { maincategory: `${e.category}`, fullnews: `${e._id}` }
+        query: { maincategory: `${e.category}`, fullnews: `${e._id}` },
       });
       // await router.replace(
       //   "category" + "/" + `${e.category}` + "/" + `${e._id}`
@@ -80,7 +77,7 @@ function NewsBlock(props) {
       //   query: { maincategory: `${e.category}`, fullnews:`${e._id}`  }
       // });
 
-      console.log(`${e.category}` + "/" + `${e._id}`)
+      console.log(`${e.category}` + "/" + `${e._id}`);
     }
     // navigate("/fullnews/" + `${e._id}`);
     // window.location.reload();
@@ -119,23 +116,23 @@ function NewsBlock(props) {
     {
       props.value.unique == true
         ? axios
-          .post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNews")
-          .then(async (response) => {
-            // console.log(response.data.response);
-            await setNewsDatas(response.data.response);
+            .post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNews")
+            .then(async (response) => {
+              // console.log(response.data.response);
+              await setNewsDatas(response.data.response);
 
-            console.log("res1");
-          })
+              console.log("res1");
+            })
         : axios
-          .post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNewsData", {
-            data: `${props.value.data}`,
-          })
-          .then(async (response) => {
-            // console.log(response.data.response);
-            await setNewsDatas(response.data.response);
-            console.log("res2");
-            // console.log(response.data.response);
-          });
+            .post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNewsData", {
+              data: `${props.value.data}`,
+            })
+            .then(async (response) => {
+              // console.log(response.data.response);
+              await setNewsDatas(response.data.response);
+              console.log("res2");
+              // console.log(response.data.response);
+            });
     }
   }, [props.value.unique, props.value.data]);
 
@@ -198,16 +195,20 @@ function NewsBlock(props) {
             </div>
 
             <div className={styles.NewFooter2}>
-              <div className="cated">{news.GujSubCategory? news.GujSubCategory: news.GujCategory}</div>
+              <div className="cated">
+                {news.GujSubCategory ? news.GujSubCategory : news.GujCategory}
+              </div>
 
               <div className={styles.SocialIcon2}>
                 <div
                   onClick={(e) => {
                     toastOnClick(
-                      process.env.NEXT_PUBLIC_FRONT_FILES + "category/" +
-                      news.EngCategory + "/" +
-                      news._id
-                    )
+                      process.env.NEXT_PUBLIC_FRONT_FILES +
+                        "category/" +
+                        news.EngCategory +
+                        "/" +
+                        news._id
+                    );
 
                     // handleCopyUrl(
                     //   process.env.NEXT_PUBLIC_FRONT_FILES +
@@ -222,28 +223,34 @@ function NewsBlock(props) {
                     icon={faLink}
                   ></FontAwesomeIcon>
                 </div>
-                <div onClick={(e) => {
-                  facebookClick(
-                    process.env.NEXT_PUBLIC_FRONT_FILES + "category/" +
-                    news.EngCategory + "/" +
-                    news._id
-                  )
-
-                }}>
+                <div
+                  onClick={(e) => {
+                    facebookClick(
+                      process.env.NEXT_PUBLIC_FRONT_FILES +
+                        "category/" +
+                        news.EngCategory +
+                        "/" +
+                        news._id
+                    );
+                  }}
+                >
                   <FontAwesomeIcon
                     className={styles.SocialIconed2}
                     href="#"
                     icon={faFacebook}
                   ></FontAwesomeIcon>
                 </div>
-                <div onClick={(e) => {
-                  twitterClick(
-                    process.env.NEXT_PUBLIC_FRONT_FILES + "category/" +
-                    news.EngCategory + "/" +
-                    news._id
-                  )
-
-                }}>
+                <div
+                  onClick={(e) => {
+                    twitterClick(
+                      process.env.NEXT_PUBLIC_FRONT_FILES +
+                        "category/" +
+                        news.EngCategory +
+                        "/" +
+                        news._id
+                    );
+                  }}
+                >
                   <FontAwesomeIcon
                     className={styles.SocialIconed2}
                     href="#"

@@ -1,11 +1,9 @@
 .headlines {
   width: 100%;
   position: relative;
-
-  /* margin: 1.875rem 0rem 0rem 0rem; */
-
   height: 20%;
 }
+
 .headlinesright {
   width: 25%;
 
@@ -13,7 +11,8 @@
   /* margin-right: 14%; */
   position: relative;
   float: right;
-  padding: 2%;
+  /* padding: 2%; */
+  padding: 2% 2% 0% 2%;
   /* border: red 1px solid; */
 }
 
@@ -26,6 +25,7 @@
   height: 108px;
   border-radius: 4%;
 }
+
 .headlinesleft {
   width: 100%;
   /* height: 100%; */
@@ -64,19 +64,21 @@
 .refl {
   display: inline-flex;
   flex-direction: row-reverse;
-  width:100%;
+  width: 100%;
 }
+
 .NewFooter2 {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   font-size: 120%;
-  height: 2rem;
+  /* height: 2rem; */
+  height: 1.5rem;
   color: #808080;
   font-weight: bold
-  
 }
+
 .SocialIcon2 {
   /* flex:1; */
   float: right;
@@ -86,24 +88,27 @@
   flex-direction: row;
   margin-right: 2%;
 }
-  /* position: relative; */
-  /* justify-content: space-between; */
-  /* right:0 */
-  /* align-items: center; */
+
+/* position: relative; */
+/* justify-content: space-between; */
+/* right:0 */
+/* align-items: center; */
 
 .cated {
   /* flex:1; */
   height: 24px;
   width: 150px;
   font-weight: bold;
-  
+
 }
+
 .SocialIconed1 {
   height: 24px;
   width: 24px;
 }
+
 .SocialIconed2 {
-  padding-left: 20px;
+  padding-left: 32px;
   height: 24px;
   width: 24px;
 }
@@ -122,22 +127,27 @@
   bottom: 0;
   left: 0;
 }
+
 .icon {
   margin: 0rem 6.25rem 0rem 0rem;
 }
+
 .icon a {
   text-decoration: none;
 }
+
 .head {
   width: 100%;
   display: inline-block;
   border-bottom: 1px solid black;
 }
+
 .head h4 {
   float: left;
   margin: 5px;
   font-size: 28px;
 }
+
 .head p {
   float: right;
   margin: 18px 5px 5px 5px;
@@ -151,7 +161,7 @@
   /* height: 29.8%; */
   cursor: pointer;
   width: 94%;
-  height: 195px;
+  height: 150px;
   background-color: #ffff;
   padding: 20px 20px 8px;
   /* border-style: ridge; */
@@ -164,14 +174,17 @@
   width: 53rem;
   margin-top: 1rem;
 }
+
 .globelicon {
   color: #3b5998;
   font-size: 150%;
 }
+
 .CatName {
   font-size: 110%;
   font-weight: 600;
 }
+
 .SocialGlobelIcns {
   font-size: 20%;
   color: #3b5998;
@@ -194,6 +207,7 @@
     height: auto;
     /* margin-left: 1.5%; */
   }
+
   .headlinesright img {
     /* border: 1px solid  green; */
     width: 100%;
@@ -208,8 +222,9 @@
     display: block;
     /* align-items: center; */
   }
+
   .headlinesleft {
-    width:78%;
+    width: 78%;
   }
 
   .refl {
@@ -227,22 +242,26 @@
   .SocialIconed2 {
     padding-left: 10px;
   }
+
   .cated {
     height: 24px;
     width: 150px;
     font-size: 14px;
     line-height: 24px;
   }
+
   .SocialIcon2 {
     /* border: 1px solid red; */
     height: 19px;
     width: 74px;
   }
+
   .SocialIconed1 {
     height: 14px;
     width: 24px;
     /* padding-left: 45px; */
   }
+
   .SocialIconed2 {
     padding-left: 4px;
     height: 14px;
@@ -268,6 +287,7 @@
     width: auto;
     min-width: 350px;
   }
+
   .SocialIcon2 {
     /* width: 30%; */
     /* min-width: 89px; */
@@ -276,6 +296,7 @@
   .headlinesright img {
     min-width: 134px;
   }
+
 }
 
 
@@ -287,6 +308,7 @@
   }
 
 }
+
 @media all and (min-width: 1026px) and (max-width: 1069px) {
   .SocialIcon2 {
     width: 25%;
@@ -295,35 +317,43 @@
 
 }
 
-@media all and (min-width: 1082px) and (max-width: 1218px) { 
+@media all and (min-width: 1082px) and (max-width: 1218px) {
   .SocialIcon2 {
     width: 25%;
     /* min-width: 89px; */
   }
-
 }
 
-@media all and (min-width: 800px) and (max-width: 847px) { 
+@media all and (max-width: 1082px) {
+  .BlockHead {
+    width: 90%;
+  }
+}
+
+@media all and (min-width: 800px) and (max-width: 847px) {
   .SocialIcon2 {
     width: 20%;
     /* min-width: 89px; */
   }
 
 }
-@media all and (min-width: 911px) and (max-width: 1025px) { 
+
+@media all and (min-width: 911px) and (max-width: 1025px) {
   .SocialIcon2 {
     width: 20%;
     /* min-width: 89px; */
   }
 
 }
-@media all and (min-width: 807) and (max-width: 912px) { 
+
+@media all and (min-width: 807) and (max-width: 912px) {
   .SocialIcon2 {
     width: 30%;
     /* min-width: 89px; */
   }
 
 }
+
 /* 
 @media all and (min-width: 997px) and (max-width: 1025px) {
   .SocialIcon2 {

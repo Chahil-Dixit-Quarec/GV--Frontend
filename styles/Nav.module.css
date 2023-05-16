@@ -18,7 +18,7 @@
   z-index: 1000;
   width: 100%;
   top: 0;
-  height: 8%;
+  height: 10%;
   background-color: #fafafa
 }
 
@@ -28,6 +28,7 @@
   font-size: 1.625rem;
   /* border: 1px solid red */
 }
+
 .infosize2 {
   /* font-size: 169%; */
   /* margin-left: 8%; */
@@ -46,7 +47,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 5%;
+  margin-top: 3%;
   /* width:100% */
 }
 
@@ -76,17 +77,18 @@
   color: black;
   display: inline-flex
 }
+
 .imgs {
-  margin-top: 5%;
+  margin-top: 10%;
+  height: 50px;
+  width: 278px;
 }
 
 .nevmenu li:hover {
   color: orangered;
 }
 
-.navmenu a li {
- 
-}
+.navmenu a li {}
 
 .logo Image {
   /* height: 4.375rem; */
@@ -112,10 +114,11 @@
   font-size: 200%;
   display: none;
 }
-.imagescale{
-  width:70%;
-height:30%;
-/* border: 1px solid red */
+
+.imagescale {
+  width: 70%;
+  height: 30%;
+  /* border: 1px solid red */
 }
 
 
@@ -144,36 +147,38 @@ height:30%;
     margin: 0.5rem;
   }
 
-  .logo{
+  .logo {
     height: 3rem;
-    
+
 
   }
 }
 
-@media  (max-width: 817px) {
+@media (max-width: 817px) {
   .navmenu .link {
     display: none;
     /* border: 1px solid red; */
   }
+
   .imgs {
     margin-top: 1.1%
   }
-  
+
   .Container {
     position: fixed;
     z-index: 100;
     margin-top: 0px;
     height: 7%;
   }
-  
+
   .navmenu .datas {
     display: none;
   }
+
   .MediaIco {
     display: block;
     float: left;
-    color:black;
+    color: black;
     height: 30px;
     width: 30px;
   }
@@ -187,7 +192,7 @@ height:30%;
     padding: 0px 15px;
   }
 
-  
+
 
   .logo Image {
     height: 3rem;
@@ -196,25 +201,25 @@ height:30%;
 }
 
 @media all and (max-width:500px) {
-  .Container {
-    /* height: 97px; */
-  }
+  /* .Container { */
+  /* height: 97px; */
+  /* } */
 
   .logo Image {
     height: 3rem;
   }
-
-
 }
+
+@media all and (max-width: 390px) {}
 
 @media all and (max-width: 360px) {
   .Container {
     margin-top: 5px;
   }
 
-  .Container {
-    /* height: 92px; */
-  }
+  /* .Container { */
+  /* height: 92px; */
+  /* } */
 }
 
 
