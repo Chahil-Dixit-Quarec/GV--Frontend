@@ -41,7 +41,10 @@ export default function Home() {
           content="https://secretseventeen.com/Media/icon.png"
         />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <meta name="google-site-verification" content="zGgHJz2irKeMA-BJqqQ2N9FK5NDP385rFy_SARY4eSo" />
+       
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2916945760362146"
+     crossorigin="anonymous"></script>
+ <meta name="google-site-verification" content="zGgHJz2irKeMA-BJqqQ2N9FK5NDP385rFy_SARY4eSo" />
       </Head>
       <App>
         <TrendingNews />
