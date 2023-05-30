@@ -13,7 +13,6 @@
 
 .insideContainer {
   border-bottom: 1px solid #eaeaea;
-  /* border:1px solid red; */
   position: fixed;
   z-index: 1000;
   width: 100%;
@@ -23,16 +22,13 @@
 }
 
 .infosize {
-  /* font-size: 200%; */
-  /* margin-left:6% ; */
   font-size: 1.625rem;
-  /* border: 1px solid red */
+  padding-left: 7px;
 }
 
 .infosize2 {
-  /* font-size: 169%; */
-  /* margin-left: 8%; */
   font-size: 1.625rem;
+  padding-left: 7px;
 }
 
 .logo {
@@ -48,17 +44,14 @@
   justify-content: flex-end;
   align-items: center;
   margin-top: 3%;
-  /* width:100% */
 }
 
 .navmenu .link {
   list-style: none;
   margin: 1.25rem;
-  /* font-size: 2.063rem; */
   cursor: pointer;
   justify-content: flex-end;
   text-decoration: none;
-  /* font-size: 1.625rem; */
   font-size: 60%;
   color: black;
   display: inline-flex;
@@ -68,11 +61,9 @@
 .navmenu .datas {
   list-style: none;
   margin: 1.25rem;
-  /* font-size: 2.063rem; */
   cursor: pointer;
   justify-content: flex-end;
   text-decoration: none;
-  /* font-size: 1.625rem; */
   font-size: 80%;
   color: black;
   display: inline-flex
@@ -81,17 +72,14 @@
 .imgs {
   margin-top: 10%;
   height: 50px;
-  width: 278px;
+  width: 220px;
 }
 
 .nevmenu li:hover {
   color: orangered;
 }
 
-.navmenu a li {}
-
 .logo Image {
-  /* height: 4.375rem; */
   margin-top: 5%;
 }
 
@@ -118,11 +106,7 @@
 .imagescale {
   width: 70%;
   height: 30%;
-  /* border: 1px solid red */
 }
-
-
-
 
 .MediaIco {
   display: none;
@@ -149,19 +133,19 @@
 
   .logo {
     height: 3rem;
-
-
   }
 }
 
 @media (max-width: 817px) {
   .navmenu .link {
     display: none;
-    /* border: 1px solid red; */
   }
 
   .imgs {
-    margin-top: 1.1%
+    margin-top: 6px;
+    height: 44px;
+    width: 172px;
+    margin-left: 4px;
   }
 
   .Container {
@@ -192,8 +176,6 @@
     padding: 0px 15px;
   }
 
-
-
   .logo Image {
     height: 3rem;
     margin: 0px 35px;
@@ -201,31 +183,18 @@
 }
 
 @media all and (max-width:500px) {
-  /* .Container { */
-  /* height: 97px; */
-  /* } */
-
   .logo Image {
     height: 3rem;
   }
 }
 
-@media all and (max-width: 390px) {}
-
 @media all and (max-width: 360px) {
   .Container {
     margin-top: 5px;
   }
-
-  /* .Container { */
-  /* height: 92px; */
-  /* } */
 }
 
-
-
 @media all and (max-width: 644px) {
-
   .insideContainer {
     height: 8%;
   }

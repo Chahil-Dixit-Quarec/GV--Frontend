@@ -4,6 +4,8 @@
     height: auto;
     border: 1px solid #eaeaea;
     padding: 20px 20px 8px;
+    /* margin: 20px 20px 8px; */
+    margin-top: 20px;
     cursor: pointer;
 
 }
@@ -74,6 +76,8 @@
         width: 88%;
         height: auto;
         border-top: none;
+        padding: 3px 20px 8px;
+        margin-top: 3px;
 
     }
 
@@ -106,7 +110,7 @@
 
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 550px) {
     .Imges {
         height: 250px
     }

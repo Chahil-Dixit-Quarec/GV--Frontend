@@ -6,21 +6,13 @@
 
 .headlinesright {
   width: 25%;
-
   height: 100%;
-  /* margin-right: 14%; */
   position: relative;
   float: right;
-  /* padding: 2%; */
   padding: 2% 2% 0% 2%;
-  /* border: red 1px solid; */
 }
 
 .headlinesright img {
-  /* width: 100%;
-  
-  height: 8rem; */
-  /* border: red 1px solid; */
   width: 144px;
   height: 108px;
   border-radius: 4%;
@@ -28,39 +20,22 @@
 
 .headlinesleft {
   width: 100%;
-  /* height: 100%; */
   position: relative;
-  /* max-width: 434px; */
   height: 120px;
-
   float: left;
-
-  /* padding: 1%; */
 }
 
 .headlinesleft h3 {
   flex-direction: column;
-  /* width: 434px; */
   height: auto;
-  /* width: 100%; */
-  /* height: 54px; */
   overflow: hidden;
   font-weight: bold;
-  /* font-size: 22px; */
-  /* margin-bottom: 0.7rem; */
-  /* border: red 1px solid; */
   display: flex;
-
   font-size: 20px;
-  /* font-weight: var(--font-weight-bold); */
   line-height: 30px;
-  /* padding-right: 20px; */
-  /* align-items: center;
-  text-align: center; */
-  /* justify-content: center; */
+
 }
 
-/*---------------------------------------*/
 .refl {
   display: inline-flex;
   flex-direction: row-reverse;
@@ -71,16 +46,13 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  /* margin-top: 15px; */
   font-size: 120%;
-  /* height: 2rem; */
   height: 1.5rem;
   color: #808080;
   font-weight: bold
 }
 
 .SocialIcon2 {
-  /* flex:1; */
   float: right;
   height: 19px;
   width: 20%;
@@ -89,13 +61,7 @@
   margin-right: 2%;
 }
 
-/* position: relative; */
-/* justify-content: space-between; */
-/* right:0 */
-/* align-items: center; */
-
 .cated {
-  /* flex:1; */
   height: 24px;
   width: 150px;
   font-weight: bold;
@@ -113,13 +79,11 @@
   width: 24px;
 }
 
-/*--------------------------------------*/
 .headlinesleft p {
   font-size: 15px;
   font-family: inter;
   width: 98%;
   height: 119px;
-  /* overflow: hidden; */
 }
 
 .footer h4 {
@@ -156,18 +120,12 @@
 }
 
 .BlockHead {
-  /* width:40rem; */
-  /* margin-top: 3%; */
-  /* height: 29.8%; */
   cursor: pointer;
   width: 94%;
   height: 150px;
   background-color: #ffff;
   padding: 20px 20px 8px;
-  /* border-style: ridge; */
   border: 1px solid #eaeaea;
-
-  /* overflow-block: hidden; */
 }
 
 .footer {
@@ -195,32 +153,21 @@
 
 @media all and (min-width: 360px) and (max-width: 532px) {
   .BlockHead {
-    /* border: 1px solid red; */
-    /* width:55%; */
     width: 94%;
     padding: 8px 8px 8px;
-
-    /* height: 50%;
-    margin-left:3% */
-
-    /* height: 46%; */
     height: auto;
-    /* margin-left: 1.5%; */
   }
 
   .headlinesright img {
-    /* border: 1px solid  green; */
     width: 100%;
   }
 
   .headlinesleft h3 {
-    /* border: 1px solid pink; */
     width: 90%;
     height: 100%;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 23px;
     display: block;
-    /* align-items: center; */
   }
 
   .headlinesleft {
@@ -235,7 +182,6 @@
 
 @media all and (min-width: 360px) and (max-width: 532px) {
   .NewFooter2 {
-    /* margin-top: 35%; */
     margin-top: auto;
   }
 
@@ -251,7 +197,6 @@
   }
 
   .SocialIcon2 {
-    /* border: 1px solid red; */
     height: 19px;
     width: 74px;
   }
@@ -259,19 +204,12 @@
   .SocialIconed1 {
     height: 14px;
     width: 24px;
-    /* padding-left: 45px; */
   }
 
   .SocialIconed2 {
     padding-left: 4px;
     height: 14px;
     width: 24px;
-  }
-}
-
-@media all and (min-width: 1500px) and (max-width: 1800px) {
-  .SocialIcon2 {
-    /* width: 35%; */
   }
 }
 
@@ -288,11 +226,6 @@
     min-width: 350px;
   }
 
-  .SocialIcon2 {
-    /* width: 30%; */
-    /* min-width: 89px; */
-  }
-
   .headlinesright img {
     min-width: 134px;
   }
@@ -303,24 +236,24 @@
 @media (max-width: 450px) {
 
   .NewFooter2 {
-
     font-size: 80%
   }
 
+  .headlinesright img {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 @media all and (min-width: 1026px) and (max-width: 1069px) {
   .SocialIcon2 {
     width: 25%;
-    /* min-width: 89px; */
   }
-
 }
 
 @media all and (min-width: 1082px) and (max-width: 1218px) {
   .SocialIcon2 {
     width: 25%;
-    /* min-width: 89px; */
   }
 }
 
@@ -333,69 +266,17 @@
 @media all and (min-width: 800px) and (max-width: 847px) {
   .SocialIcon2 {
     width: 20%;
-    /* min-width: 89px; */
   }
-
 }
 
 @media all and (min-width: 911px) and (max-width: 1025px) {
   .SocialIcon2 {
     width: 20%;
-    /* min-width: 89px; */
   }
-
 }
 
 @media all and (min-width: 807) and (max-width: 912px) {
   .SocialIcon2 {
     width: 30%;
-    /* min-width: 89px; */
-  }
-
-}
-
-/* 
-@media all and (min-width: 997px) and (max-width: 1025px) {
-  .SocialIcon2 {
-    width: auto;
-    min-width: 327px;
   }
 }
-
-@media all and (min-width: 977px) and (max-width: 997px) {
-  .SocialIcon2 {
-    width: auto;
-    min-width: 297px;
-  }
-}
-
-@media all and (min-width: 907px) and (max-width: 955px) {
-  .SocialIcon2 {
-    width: auto;
-    min-width: 297px;
-  }
-}
-
-@media all and (min-width: 856px) and (max-width: 906px) {
-  .SocialIcon2 {
-    width: auto;
-    min-width: 208px;
-  }
-}
-
-@media all and (min-width: 770px) and (max-width: 809px) {
-  .SocialIcon2 {
-    width: auto;
-    min-width: 301px;
-  }
-}
-
-@media all and (min-width: 725px) and (max-width: 769px) {
-  .SocialIcon2 {
-    width: auto;
-    min-width: 250px;
-  }
-}
-
-@media all and (min-width: 533px) and (max-width: 646px) {
-} */

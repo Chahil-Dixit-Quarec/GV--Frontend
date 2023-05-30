@@ -160,7 +160,7 @@
   }
 }
 
-@media (max-width: 810px)  { 
+@media (max-width: 810px) {
   .categorysection {
     width: 257%;
     height: auto;
@@ -186,7 +186,7 @@
     flex-direction: row;
     align-items: center;
   }
-  
+
 }
 
 
@@ -196,6 +196,7 @@
     font-size: 15px;
 
   }
+
   .ntres {
     font-size: 15px;
   }
@@ -207,13 +208,14 @@
   }
 
   .category {
-
     font-size: 12px;
-
+    height: 16px;
   }
+
   .ntres {
     font-size: 15px;
   }
+
   .IOCINC {
     height: 15px;
     width: 15px;
@@ -232,6 +234,7 @@
   .categorysection {
     width: 240%;
   }
+
   .ntres {
     font-size: 15px;
   }
@@ -249,13 +252,11 @@
   .ntres {
     font-size: 15px;
   }
+
   .categorysection {
-    width: 380%;
+    width: 313%;
+    height: 45px;
   }
 
 
 }
-
-
-
-
