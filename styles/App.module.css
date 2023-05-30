@@ -3,92 +3,63 @@
   max-width: 100%;
   flex-direction: row;
 }
-
-
 .HomePage {
-
-
   height: 130vh;
   margin: 0 auto;
-
   max-width: 1280px;
   position: relative;
-
   margin-top: 3%;
   overflow: hidden;
-
 }
-
 .boundry {
-
   margin-right: 5%;
   height: 100%;
   width: 100%;
   display: flex;
-
 }
-
 .viewed {
   display: none
 }
-
 .LeftSection {
   flex: 1s;
-
   height: 99%;
 }
-
 .RightSection {
   flex: 1s;
   flex-basis: 20%;
-
   height: 100%;
   margin-left: 2%;
 }
-
 .MiddleSection {
   flex-basis: 60%;
   flex: 1;
-
   flex-wrap: wrap;
   overflow-y: hidden;
   overflow-y: scroll;
 }
-
 .MiddleSection::-webkit-scrollbar {
   display: none;
 }
-
 .MiddleSection {
   -ms-overflow-style: none;
-
   scrollbar-width: none;
-
 }
-
 .Fun {
   width: 60%;
 }
-
 @media all and (min-width: 770px) and (max-width: 1025px) {
   .RightSection {
     display: none;
   }
-
   .boundry {
-
     margin: 5%;
   }
-
   .HomePage {
     margin-top: 8%;
   }
 }
-
 @media all and (min-width: 200px) and (max-width: 810px) {
-
   .viewed {
-
     overflow: hidden;
     overflow-x: scroll;
     margin-top: 12%;
@@ -97,41 +68,34 @@
     height: 70px;
   }
 }
-
 @media all and (min-width:183px) and (max-width:810px) {
-
   .LeftSection {
     display: none;
   }
-
   .RightSection {
     display: none;
-
   }
 }
-
 @media (max-width:400px) {
-
   .viewed {
     height: 60px;
   }
 }
-
 /* @media (max-width: 1070px) {
   .HomePage {
     margin-top: 3%;
   }
 } */
-
 @media all and (min-width:810px) and (max-width:1500px) {
-
   .MiddleSection {
     margin-top: 3%;
   }
 }
-
 @media only screen and (max-width: 2000px) and (min-width: 1500px) {
   .MiddleSection {
     margin-top: 2%;
   }
 }
+
+
+

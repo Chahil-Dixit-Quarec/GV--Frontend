@@ -6,27 +6,21 @@
   align-items: center;
   text-decoration: none;
 }
-
 .IYMAIN a {
   text-decoration: none;
 }
-
 .I86iuu {
   color: #808080;
 }
-
 .I86iuu:hover {
-  color: #f89c1d;
+  color: #F89C1D;
 }
-
 .selected {
-  color: #f89c1d;
+  color: #F89C1D;
 }
-
 @media all and (max-width:769px) {
   .IYMAIN {
     display: flex;
-    /* justify-content: space-between; */
     text-align: center;
     align-items: center;
     position: fixed;
@@ -38,30 +32,33 @@
     height: 33px;
     padding: 10px 10px;
   }
-
   .I86iuu {
     font-size: 10px;
   }
 }
-
 @media all and (max-width: 650px) {
   .IYMAIN {
     width: 95%;
     height: 39px;
     padding: 10px 14px;
   }
-
   .I86iuu {
     font-size: 12px;
   }
 }
-
 @media all and (max-width:450px) {
-
-
   .Bottom_IYMAIN__8xH5r {
     width: 95%;
     height: 24px;
     padding: 10px 5px 5px 5px;
   }
 }
+
+
+
+
+
+
+
+
+

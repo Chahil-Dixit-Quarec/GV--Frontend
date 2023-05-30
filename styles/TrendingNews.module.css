@@ -74,6 +74,8 @@
 @media all and (min-width:360px) and (max-width:480px) {
     .FullHead {
         width: 88%;
+padding: 3px 20px 8px;
+margin-top: 3px;
         height: auto;
         border-top: none;
         padding: 3px 20px 8px;
