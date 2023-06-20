@@ -91,7 +91,7 @@ function NewsBlock(props) {
         }
     }, [props.value.unique, props.value.data]);
 
-    const loadMore = <button className={styles.loadMoreBtn} onClick={getData}>Load More</button>
+    const loadMore = <div key={0}><button className={styles.loadMoreBtn} onClick={getData}>Load More</button></div>
 
     return (
         <div style={{textAlign: "center"}}>

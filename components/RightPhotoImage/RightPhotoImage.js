@@ -26,7 +26,7 @@ function RightPhotoImage(name) {
             <div className={styles.IUTYO} onClick={(e) => {
                 handleClick(videoData)
             }}>
-                <Image className={styles.KHUGUTF} src={process.env.NEXT_PUBLIC_API_URL + videoData.ImagePath} alt=""
+                <Image className={styles.KHUGUTF} src={process.env.NEXT_PUBLIC_API_URL + videoData?.ImagePath} alt=""
                        width="280" height="540"/>
                 {/*<p className={styles.JKUv}>વીડિયો</p>*/}
                 {/*<p className={styles.MKF9878}>વધુ જુઓ</p>*/}

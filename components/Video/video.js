@@ -31,27 +31,29 @@ function Video() {
         axios
             .get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getAllVideoData").then(async (response) => {
             // console.log(response.data);
-            console.log(isMobile);
+            console.log(response);
             // if (isMobile) {
             //     console.log(response.data[index]);
             //     setVideoData(encodeURIComponent(JSON.stringify(response.data[index])));
             //     console.log(videoData);
             // }
-            if (isMobile) {
-                console.log(response.data[0]);
-                return handleClick(response.data[0]);
+            if (response.data.length > 0) {
+                localStorage.setItem('videos', JSON.stringify(response.data));
+                if (isMobile) {
+                    // console.log(response.data[0]);
+                    return handleClick(response.data[0]);
+                }
+                setRecived(response.data);
             }
-            localStorage.setItem('videos', JSON.stringify(response.data));
-            setRecived(response.data);
         })
-    })
+    }, [])
 
     return (
         <div className={styles.Tagbody}>
             <div className={styles.VideoBoundary}>
                 {recived.map((item, index) => (
-                    <div className={styles.ImageBoundary} key={item._id} onClick={(e) => {
-                        handleClick(item)
+                    <div className={styles.ImageBoundary} key={item._id} onClick={async (e) => {
+                        await handleClick(item)
                     }}>
                         <div className={styles.ImgBoundaries} key={item._id}>
                             <div key={item._id}>

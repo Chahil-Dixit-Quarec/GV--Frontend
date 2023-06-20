@@ -62,7 +62,7 @@ function TrendingNews() {
       });
   }, []);
 
-  console.log("resData", resData.Path);
+  // console.log("resData", resData.Path);
 
   return (
     <>
@@ -73,18 +73,18 @@ function TrendingNews() {
           onClick={(e) => {
             router.push({
               pathname: "/category/[maincategory]/[fullnews]",
-              query: { maincategory: `${resData.EngCategory}`, fullnews: `${resData._id}` },
+              query: { maincategory: `${resData?.EngCategory}`, fullnews: `${resData?._id}` },
             });
           }}
         >
           <h3 style={{ overflow: "hidden" }}>
             <span
-              style={{ color: resData.Colored ? resData.Colored : "#000000" }}
+              style={{ color: resData?.Colored ? resData?.Colored : "#000000" }}
             >
-              {resData.NewsTittle}
+              {resData?.NewsTittle}
             </span>{" "}
             <br />
-            <span>{resData.NewsSubTittle}</span>
+            <span>{resData?.NewsSubTittle}</span>
           </h3>
 
           {/* <img className="" src={img} alt="" /> */}
@@ -94,13 +94,13 @@ function TrendingNews() {
             <Image
               fill
               sizes="100vw"
-              src={process.env.NEXT_PUBLIC_API_URL + `${resData.Path}`}
+              src={process.env.NEXT_PUBLIC_API_URL + `${resData?.Path}`}
               alt="data"
             />
           </div>
         </div>
         <div className={styles.NewFooter}>
-          <div className={styles.catted}>{resData.GujCategory}</div>
+          <div className={styles.catted}>{resData?.GujCategory}</div>
 
           <div className={styles.SocialIcon}>
             <FontAwesomeIcon
@@ -111,12 +111,12 @@ function TrendingNews() {
                 toastOnClick(
                   process.env.NEXT_PUBLIC_FRONT_FILES +
                   "category/" +
-                  resData.EngCategory +
+                  resData?.EngCategory +
                   "/" +
-                  resData._id
+                  resData?._id
                 );
 
-                // navigator.clipboard.writeText(process.env.NEXT_PUBLIC_FRONT_FILES + "fullnews/" + resData._id);
+                // navigator.clipboard.writeText(process.env.NEXT_PUBLIC_FRONT_FILES + "fullnews/" + resData?._id);
               }}
             ></FontAwesomeIcon>
             <FontAwesomeIcon
@@ -127,9 +127,9 @@ function TrendingNews() {
                 facebookClick(
                   process.env.NEXT_PUBLIC_FRONT_FILES +
                   "category/" +
-                  resData.EngCategory +
+                  resData?.EngCategory +
                   "/" +
-                  resData._id
+                  resData?._id
                 );
 
                 // navigator.clipboard.writeText(process.env.NEXT_PUBLIC_FRONT_FILES + "fullnews/" + resData._id);
