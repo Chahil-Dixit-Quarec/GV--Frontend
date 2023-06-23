@@ -11,8 +11,8 @@ import {
     Facebook,
     HighlightOffOutlined,
     LinkSharp,
-    ShareOutlined,
-    Twitter
+    ShareOutlined, Speaker,
+    Twitter, VolumeMute, VolumeMuteRounded, VolumeOffRounded, VolumeUpOutlined, VolumeUpRounded, WhatsApp
 } from "@material-ui/icons";
 
 function VideoNewsed(props) {
@@ -41,6 +41,20 @@ function VideoNewsed(props) {
         let videos = localStorage.getItem('videos');
         videos = JSON.parse(videos);
         setAllVideos(videos);
+    }
+
+    const whatsappShare = () => {
+        window.open('https://wa.me/?text=' + process.env.NEXT_PUBLIC_FRONT_FILES + 'video/' + encodeURIComponent(videoNews).trim(), '_blank');
+    }
+
+    const refVideo = useRef(null);
+    const [videoMute, setVideoMute] = useState(false);
+    const videoMuteUnMute = () => {
+        setVideoMute(!videoMute);
+        if (!refVideo.current) {
+            return;
+        }
+        refVideo.current.muted = !videoMute;
     }
 
     // Below code is for video slide like instagram reels in mobile view
@@ -112,21 +126,37 @@ function VideoNewsed(props) {
         />
         <div className={styles.app__videos} ref={videoRefFn}>
             <div className={styles.video}>
-                <video className={styles.video__player}
+                <video className={styles.video__player} ref={refVideo}
                        src={process.env.NEXT_PUBLIC_API_URL + data.VideoPath} loop
                        autoPlay controls disablePictureInPicture playsInline controlsList="nodownload"></video>
-
-                <div className={styles.videoSidebar}>
-                    <div className={styles.videoSidebar__button}>
-                        <Facebook></Facebook>
+                {isMobile &&
+                    <div className={styles.videoSidebar}>
+                        <div className={styles.videoSidebar__button} onClick={whatsappShare}>
+                            <WhatsApp></WhatsApp>
+                        </div>
+                        <div className={styles.videoSidebar__button} onClick={videoMuteUnMute}>
+                            {!videoMute &&
+                                <VolumeUpRounded></VolumeUpRounded>
+                            }
+                            {videoMute &&
+                                <VolumeOffRounded></VolumeOffRounded>
+                            }
+                        </div>
                     </div>
-                    <div className={styles.videoSidebar__button}>
-                        <Twitter></Twitter>
+                }
+                {!isMobile &&
+                    <div className={styles.videoSidebar}>
+                        <div className={styles.videoSidebar__button}>
+                            <Facebook></Facebook>
+                        </div>
+                        <div className={styles.videoSidebar__button}>
+                            <Twitter></Twitter>
+                        </div>
+                        <div className={styles.videoSidebar__button}>
+                            <LinkSharp></LinkSharp>
+                        </div>
                     </div>
-                    <div className={styles.videoSidebar__button}>
-                        <LinkSharp></LinkSharp>
-                    </div>
-                </div>
+                }
                 {!isMobile &&
                     <div className={styles.videoSidebar__close__button}
                          onClick={async (e) => router.back()}>
