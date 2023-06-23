@@ -9,7 +9,8 @@ import axios from "axios";
 import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {ToastContainer} from "react-toastify";
-import InfiniteScroll from 'react-infinite-scroller';
+// import InfiniteScroll from 'react-infinite-scroller';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import _, {map} from 'underscore';
 
 function NewsBlock(props) {
@@ -17,6 +18,7 @@ function NewsBlock(props) {
     const [dataStatus, setDataStatus] = useState('');
     const [start, setStart] = useState(0);
     const [total, setTotal] = useState(0);
+    const [threshold, setThreshold] = useState(0);
     const pageSize = 10;
     const facebookClick = (url) => {
         const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
@@ -59,8 +61,8 @@ function NewsBlock(props) {
     };
 
     const getData = async () => {
-        console.log('more data');
-        let startPage = pageSize + start;
+        let startPage = pageSize * start;
+        console.log(startPage);
         axios.post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNewsNew", {start: startPage, pageSize})
             .then(async (response) => {
                 if (response.data.data.length > 0) {
@@ -70,40 +72,41 @@ function NewsBlock(props) {
                     await setNewsDatas(tempArr);
                     setDataStatus('success');
                     setTotal(response.data.total);
-                    setStart(pageSize + start);
-                    // setStart(start + 1);
-                    console.log(newsDatas)
+                    setStart(start + 1);
+                    setThreshold(Math.ceil(response.data.total / 10));
+                    console.log(Math.ceil(response.data.total / 10));
                 }
-                // console.log("res1");
             })
     }
 
     useEffect(() => {
         setNewsDatas([]);
-        {
-            props.value.unique == true
-                ? getData() : axios.post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNewsData", {
-                    data: `${props.value.data}`,
-                }).then(async (response) => {
-                    await setNewsDatas(response.data.response);
-                    console.log("res2");
-                });
-        }
+        props.value.unique === true
+            ? getData() : axios.post(process.env.NEXT_PUBLIC_API_BASE_URL + "/allNewsData", {
+                data: `${props.value.data}`,
+            }).then(async (response) => {
+                await setNewsDatas(response.data.response);
+                console.log("res2");
+            });
     }, [props.value.unique, props.value.data]);
 
-    const loadMore = <div key={0}><button className={styles.loadMoreBtn} onClick={getData}>Load More</button></div>
+    const loadMore = <div key={0}>
+        <button className={styles.loadMoreBtn} onClick={getData}>Load More</button>
+    </div>
 
     return (
-        <div style={{textAlign: "center"}}>
+        <div style={{textAlign: "center", height: 300, overflow: "auto"}}>
             <ToastContainer/>
             {dataStatus === "success" && (
                 <InfiniteScroll
-                    threshold={total}
-                    pageStart={0}
+                    dataLength={total}
                     hasMore={true}
                     loader={loadMore}
                     useWindow={true}
-                    loadMore={() => console.log('load')}>
+                    scrollThreshold={threshold}
+                    height={300}
+                    endMessage={<p>No more data to load.</p>}
+                    next={getData}>
                     {newsDatas
                         // .slice(0)
                         .reverse()
