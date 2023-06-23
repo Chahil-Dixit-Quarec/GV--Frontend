@@ -113,7 +113,7 @@ function NewsBlock(props) {
                 observer.unobserve(observerTarget.current);
             }
         };
-    }, [props.value.unique, props.value.data, observerTarget]);
+    }, [props.value.unique, props.value.data, observerTarget, start]);
 
     const loadMore = <div key={0}>
         <span style={{textAlign: "center"}}>Loading...</span>
