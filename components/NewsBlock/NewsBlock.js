@@ -48,7 +48,7 @@ function NewsBlock(props) {
     };
     const handleClick = async (e) => {
         console.log("need", e._id);
-        if (props.value.unique == true) {
+        if (props.value.unique === true) {
             await router.push({
                 pathname: "/category/[maincategory]/[fullnews]",
                 query: {maincategory: `${e.category}`, fullnews: `${e._id}`},
@@ -94,13 +94,21 @@ function NewsBlock(props) {
         }
     }
 
+    const [firstUse, setFirstUse] = useState(false);
+
     const observerTarget = useRef(null);
     useEffect(() => {
         if (props.value.unique === true) {
+            if (firstUse === false) {
+                getData();
+                setFirstUse(true);
+            }
+            console.log('1');
             const observer = new IntersectionObserver(
-                entries => {
+                async entries => {
                     if (entries[0].isIntersecting) {
-                        getData();
+                        console.log('2');
+                        await getData();
                     }
                 },
                 {threshold: 1}
