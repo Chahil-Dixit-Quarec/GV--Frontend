@@ -62,6 +62,7 @@ function NewsBlock(props) {
     };
 
     const getData = async () => {
+        console.log(props.value);
         if (props.value.unique === true) {
             let startPage = pageSize * start;
             console.log(startPage, 'start page');
@@ -88,31 +89,35 @@ function NewsBlock(props) {
                 data: `${props.value.data}`,
             }).then(async (response) => {
                 await setNewsDatas(response.data.response);
-                console.log("res2");
+                setDataStatus('success');
             });
         }
     }
 
     const observerTarget = useRef(null);
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            entries => {
-                if (entries[0].isIntersecting) {
-                    getData();
-                }
-            },
-            {threshold: 1}
-        );
+        if (props.value.unique === true) {
+            const observer = new IntersectionObserver(
+                entries => {
+                    if (entries[0].isIntersecting) {
+                        getData();
+                    }
+                },
+                {threshold: 1}
+            );
 
-        if (observerTarget.current) {
-            observer.observe(observerTarget.current);
-        }
-
-        return () => {
             if (observerTarget.current) {
-                observer.unobserve(observerTarget.current);
+                observer.observe(observerTarget.current);
             }
-        };
+
+            return () => {
+                if (observerTarget.current) {
+                    observer.unobserve(observerTarget.current);
+                }
+            };
+        } else {
+            getData();
+        }
     }, [props.value.unique, props.value.data, observerTarget, start]);
 
     const loadMore = <div key={0}>
@@ -217,7 +222,9 @@ function NewsBlock(props) {
                     ))}
                 </>
             )}
-            <div ref={observerTarget}></div>
+            {total > 0 &&
+                <div ref={observerTarget}></div>
+            }
         </>
     );
 }
