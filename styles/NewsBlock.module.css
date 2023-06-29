@@ -1,293 +1,290 @@
 .headlines {
-    width: 100%;
-    position: relative;
-    height: 20%;
+  width: 100%;
+  position: relative;
+  height: 20%;
 }
 
 .headlinesright {
-    width: 25%;
-    height: 100%;
-    position: relative;
-    float: right;
-    padding: 2% 2% 0% 2%;
+  width: 25%;
+  height: 100%;
+  position: relative;
+  float: right;
+  /* padding: 2% 2% 0% 2%; */
 }
 
 .headlinesright img {
-    width: 144px;
-    height: 108px;
-    border-radius: 4%;
+  width: 100%;
+  height: 108px;
+  border-radius: 4%;
 }
 
 .headlinesleft {
-    width: 100%;
-    position: relative;
-    height: 120px;
-    float: left;
+  width: 100%;
+  position: relative;
+  height: 100px;
+  float: left;
 }
 
 .headlinesleft h3 {
-    flex-direction: column;
-    height: auto;
-    overflow: hidden;
-    font-weight: bold;
-    display: flex;
-    font-size: 20px;
-    line-height: 30px;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden;
+  font-weight: bold;
+  display: flex;
+  font-size: 18px;
+  line-height: 30px;
+  margin: 0;
+  font-family: "Noto Sans Gujarati", sans-serif;
+  padding: 0px 55px 0px 0px;
 }
 
 .refl {
-    display: inline-flex;
-    flex-direction: row-reverse;
-    width: 100%;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  width: 100%;
 }
 
 .NewFooter2 {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    font-size: 120%;
-    height: 1.5rem;
-    color: #808080;
-    font-weight: bold
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  height: 1.5rem;
+  color: #808080;
+  font-weight: bold;
 }
 
 .SocialIcon2 {
-    float: right;
-    height: 19px;
-    width: 20%;
-    display: flex;
-    flex-direction: row;
-    margin-right: 2%;
+  float: right;
+  height: 19px;
+  width: 20%;
+  justify-content: space-between;
+  display: flex;
 }
 
 .cated {
-    height: 24px;
-    width: 150px;
-    font-weight: bold;
+  height: 24px;
+  width: 150px;
+  font-weight: bold;
 }
 
 .SocialIconed1 {
-    height: 24px;
-    width: 24px;
+  height: 22px;
+  width: 22px;
 }
-
 .SocialIconed2 {
-    padding-left: 32px;
-    height: 24px;
-    width: 24px;
+  height: 22px;
+  width: 22px;
 }
-
+.SocialIconed1:hover {
+  /* background: #000;
+  border-radius: 20px;
+  color: #fff; */
+}
 .headlinesleft p {
-    font-size: 15px;
-    font-family: inter;
-    width: 98%;
-    height: 119px;
+  font-size: 15px;
+  font-family: inter;
+  width: 98%;
+  height: 119px;
 }
 
 .footer h4 {
-    margin: 0px 0px 0px 3.125rem;
-    bottom: 0;
-    left: 0;
+  margin: 0px 0px 0px 3.125rem;
+  bottom: 0;
+  left: 0;
 }
 
 .icon {
-    margin: 0rem 6.25rem 0rem 0rem;
+  margin: 0rem 6.25rem 0rem 0rem;
 }
 
 .icon a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .head {
-    width: 100%;
-    display: inline-block;
-    border-bottom: 1px solid black;
+  width: 100%;
+  display: inline-block;
+  border-bottom: 1px solid black;
 }
 
 .head h4 {
-    float: left;
-    margin: 5px;
-    font-size: 28px;
+  float: left;
+  margin: 5px;
+  font-size: 28px;
 }
 
 .head p {
-    float: right;
-    margin: 18px 5px 5px 5px;
-    background-color: #000;
-    color: #fff;
+  float: right;
+  margin: 18px 5px 5px 5px;
+  background-color: #000;
+  color: #fff;
 }
 
 .BlockHead {
-    cursor: pointer;
-    width: 94%;
-    height: 150px;
-    background-color: #ffff;
-    padding: 20px 20px 8px;
-    border: 1px solid #EAEAEA;
+  cursor: pointer;
+  width: 94%;
+  height: 135px;
+  background-color: #ffff;
+  padding: 20px 20px 8px;
+  border: 1px solid #eaeaea;
 }
 
 .footer {
-    width: 53rem;
-    margin-top: 1rem;
+  width: 53rem;
+  margin-top: 1rem;
 }
 
 .globelicon {
-    color: #3B5998;
-    font-size: 150%;
+  color: #3b5998;
+  font-size: 150%;
 }
 
 .CatName {
-    font-size: 110%;
-    font-weight: 600;
+  font-size: 110%;
+  font-weight: 600;
 }
 
 .SocialGlobelIcns {
-    font-size: 20%;
-    color: #3B5998;
-    float: right;
-    padding-right: 58px;
-    padding-top: 5px;
+  font-size: 20%;
+  color: #3b5998;
+  float: right;
+  padding-right: 58px;
+  padding-top: 5px;
 }
 
 .loadMoreBtn {
-    padding: 2%;
-    color: white;
-    margin: 5%;
-    background: blue;
-    border: none;
-    border-radius: 7%;
+  padding: 2%;
+  color: white;
+  margin: 5%;
+  background: blue;
+  border: none;
+  border-radius: 7%;
 }
 
 @media all and (min-width: 360px) and (max-width: 532px) {
-    .BlockHead {
-        width: 94%;
-        padding: 8px 8px 8px;
-        height: auto;
-    }
+  .BlockHead {
+    width: 94%;
+    padding: 8px 8px 8px;
+    height: auto;
+  }
 
-    .headlinesright img {
-        width: 100%;
-    }
+  .headlinesright img {
+    width: 100%;
+  }
 
-    .headlinesleft h3 {
-        width: 90%;
-        height: 100%;
-        font-size: 14px;
-        line-height: 23px;
-        display: block;
-    }
+  .headlinesleft h3 {
+    width: 90%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 23px;
+    display: block;
+  }
 
-    .headlinesleft {
-        width: 78%;
-    }
+  .headlinesleft {
+    width: 78%;
+  }
 
-    .refl {
-        display: inline-flex;
-        flex-direction: row-reverse;
-    }
+  .refl {
+    display: inline-flex;
+    flex-direction: row-reverse;
+  }
 }
 
 @media all and (min-width: 360px) and (max-width: 532px) {
-    .NewFooter2 {
-        margin-top: auto;
-    }
+  .NewFooter2 {
+    margin-top: auto;
+  }
 
-    .SocialIconed2 {
-        padding-left: 10px;
-    }
+  .SocialIconed2 {
+    padding-left: 10px;
+  }
 
-    .cated {
-        height: 24px;
-        width: 150px;
-        font-size: 14px;
-        line-height: 24px;
-    }
+  .cated {
+    height: 24px;
+    width: 150px;
+    font-size: 14px;
+    line-height: 24px;
+  }
 
-    .SocialIcon2 {
-        height: 19px;
-        width: 74px;
-    }
+  .SocialIcon2 {
+    height: 19px;
+    width: 24%;
+  }
 
-    .SocialIconed1 {
-        height: 14px;
-        width: 24px;
-    }
+  .SocialIconed1 {
+    height: 14px;
+    width: 24px;
+  }
 
-    .SocialIconed2 {
-        padding-left: 4px;
-        height: 14px;
-        width: 24px;
-    }
+  .SocialIconed2 {
+    padding-left: 4px;
+    height: 14px;
+    width: 24px;
+  }
 }
 
 @media all and (min-width: 1026px) and (max-width: 1214px) {
-    .headlinesleft h3 {
-        width: auto;
-        min-width: 350px;
-    }
+  .headlinesleft h3 {
+    width: auto;
+    min-width: 350px;
+  }
 }
 
 @media all and (min-width: 1026px) and (max-width: 1269px) {
-    .headlinesleft h3 {
-        width: auto;
-        min-width: 350px;
-    }
+  .headlinesleft h3 {
+    width: auto;
+    min-width: 350px;
+  }
 
-    .headlinesright img {
-        min-width: 134px;
-    }
+  .headlinesright img {
+    min-width: 134px;
+  }
 }
 
 @media (max-width: 450px) {
-    .NewFooter2 {
-        font-size: 80%
-    }
+  .NewFooter2 {
+    font-size: 80%;
+  }
 
-    .headlinesright img {
-        width: 90px;
-        height: 90px;
-    }
+  .headlinesright img {
+    width: 100%;
+    height: 90px;
+  }
 }
 
 @media all and (min-width: 1026px) and (max-width: 1069px) {
-    .SocialIcon2 {
-        width: 25%;
-    }
+  .SocialIcon2 {
+    width: 25%;
+  }
 }
 
 @media all and (min-width: 1082px) and (max-width: 1218px) {
-    .SocialIcon2 {
-        width: 25%;
-    }
+  .SocialIcon2 {
+    width: 25%;
+  }
 }
 
 @media all and (max-width: 1082px) {
-    .BlockHead {
-        width: 94%;
-    }
+  .BlockHead {
+    width: 94%;
+  }
 }
 
 @media all and (min-width: 800px) and (max-width: 847px) {
-    .SocialIcon2 {
-        width: 20%;
-    }
+  .SocialIcon2 {
+    width: 20%;
+  }
 }
 
 @media all and (min-width: 911px) and (max-width: 1025px) {
-    .SocialIcon2 {
-        width: 20%;
-    }
+  .SocialIcon2 {
+    width: 20%;
+  }
 }
 
 @media all and (min-width: 807) and (max-width: 912px) {
-    .SocialIcon2 {
-        width: 30%;
-    }
+  .SocialIcon2 {
+    width: 30%;
+  }
 }
-
-
-
-
-
-
-

@@ -1,141 +1,159 @@
-import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+import React from "react";
 import styles from "../../styles/Nav.module.css";
 import Image from "next/image";
-// import "../ComingSoon/Coming";
-
-import img from "../../public/Logo.png";
+import { useRouter } from "next/router";
 import Link from "next/link";
-// import Image from 'next/image';
+import { Icon } from "@iconify/react";
+import homeFilled from "@iconify/icons-ant-design/home-filled";
+import playIcon from "@iconify/icons-heroicons-outline/play";
+import sharpSearch from "@iconify/icons-ic/sharp-search";
+import news24Regular from "@iconify/icons-fluent/news-24-regular";
+import Logo from "./Asset.png";
 
 function Nav() {
-  // var [date, setDate] = useState(new Date());
-
-  // useEffect(() => {
-  //   var timer = setInterval(() => setDate(new Date()), 1000);
-  //   return function cleanup() {
-  //     clearInterval(timer);
-  //   };
-  // });
+  const router = useRouter();
 
   return (
-    <>
-      <div className={styles.insideContainer}>
-        <div className={styles.Container}>
-          <input type="checkbox" id={styles.check} />
-          <div className={styles.logo}>
-            <Link href="/">
-              <div className={styles.imagescale}>
-                <Image
-                  className={styles.imgs}
-                  src="/Logo.png"
-                  width={278}
-                  height={50}
-                  alt="Logo"
+    <div className={styles.insideContainer}>
+      <div className={styles.Container}>
+        <input type="checkbox" id={styles.check} />
+        <div className={styles.logo}>
+          <Link href="/">
+            <div className={styles.imagescale}>
+              {/* <Image
+                className={styles.imgs}
+                src="/Logo.png"
+                width={278}
+                height={50}
+                alt="Logo"
+              /> */}
+              <Image
+                className={styles.imgs}
+                src={Logo}
+                width={278}
+                height={50}
+                alt="Logo"
+              />
+            </div>
+          </Link>
+        </div>
+
+        <div className={styles.navmenu}>
+          <ul>
+            <Link className={styles.havfuns} href="/" passHref>
+              <li
+                className={
+                  router.pathname === "/" ? styles.datasActive : styles.datas
+                }
+              >
+                <Icon
+                  className={
+                    router.pathname === "/"
+                      ? styles.iconicalsActive
+                      : styles.iconicals
+                  }
+                  icon={homeFilled}
                 />
-              </div>
+                <div
+                  className={
+                    router.pathname === "/"
+                      ? styles.infosize2Active
+                      : styles.infosize2
+                  }
+                >
+                  હોમ
+                </div>
+              </li>
             </Link>
-            {/* <div className="date">
-            {date.toLocaleDateString()} {date.toLocaleTimeString()}
-          </div> */}
-            {/* Date and Time Start */}
-            {/* <div className="date">
-              {date.getDate() +
-                "/" +
-                (date.getMonth() + 1) +
-                "/" +
-                date.getFullYear()}{" "}
-              {date.toLocaleTimeString()}
-            </div> */}
-            {/* Date and Time END */}
-          </div>
-          {/* <label htmlFor="check" className={styles.Icones}>
-          <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
-        </label> 
-        <FontAwesomeIcon icon={faHome}/> */}
-          <div className={styles.navmenu}>
-            <ul>
-              <Link style={{ textDecoration: "none", color: "#000" }} href="/">
-                <li className={styles.datas}>
-                  <Image
-                    src="/home.svg"
-                    alt="Home"
-                    width={28}
-                    height={28}
-                    // style={{marginTop: "5%"}}
-                  />
-                  <div className={styles.infosize2}>હોમ</div>
-                </li>
-              </Link>
-              <Link
-                style={{ textDecoration: "none", color: "#000" }}
-                href="/video"
+            <Link className={styles.havfuns} href="/video" passHref>
+              <li
+                className={
+                  router.pathname === "/video" ? styles.linkActive : styles.link
+                }
               >
-                <li className={styles.link}>
-                  <Image
-                    src="/play-button.svg"
-                    alt="Video"
-                    width={28}
-                    height={28}
-                  />
-                  <div className={styles.infosize}>વીડિઓ</div>
-                </li>
-              </Link>
-              <Link
-                style={{ textDecoration: "none", color: "#000" }}
-                href="/search"
+                <Icon
+                  className={
+                    router.pathname === "/video"
+                      ? styles.iconicalsActive
+                      : styles.iconicals
+                  }
+                  icon={playIcon}
+                />
+                <div
+                  className={
+                    router.pathname === "/video"
+                      ? styles.infosize2Active
+                      : styles.infosize2
+                  }
+                >
+                  વીડિઓ
+                </div>
+              </li>
+            </Link>
+            <Link className={styles.havfuns} href="/search" passHref>
+              <li
+                className={
+                  router.pathname === "/search"
+                    ? styles.linkActive
+                    : styles.link
+                }
               >
-                <li className={styles.link}>
-                  <Image
-                    src="/search.svg"
-                    alt="Search"
-                    width={28}
-                    height={28}
-                  />
-
-                  <div className={styles.infosize}>સર્ચ કરો</div>
-                </li>
-              </Link>
-              <Link
-                style={{ textDecoration: "none", color: "#000" }}
-                href="/epaper"
+                <Icon
+                  className={
+                    router.pathname === "/search"
+                      ? styles.iconicalsActive
+                      : styles.iconicals
+                  }
+                  icon={sharpSearch}
+                />
+                <div
+                  className={
+                    router.pathname === "/search"
+                      ? styles.infosize2Active
+                      : styles.infosize2
+                  }
+                >
+                  સર્ચ કરો
+                </div>
+              </li>
+            </Link>
+            <Link className={styles.havfuns} href="/epaper" passHref>
+              <li
+                className={
+                  router.pathname === "/epaper"
+                    ? styles.linkActive
+                    : styles.link
+                }
               >
-                <li className={styles.link}>
-                  <Image
-                    src="/newspaper.svg"
-                    alt="newspapers"
-                    width={28}
-                    height={28}
-                  />
-                  <div className={styles.infosize}>ઇ-પેપર્સ</div>
-                </li>
-              </Link>
-
-              {/* <a style={{ textDecoration: "none", color: "#000" }} href="/">
-                <li className="MediaIcoDOT">
-                  <FontAwesomeIcon icon={faEllipsisV}></FontAwesomeIcon>
-                </li>
-              </a> */}
-              <Link
-                style={{ textDecoration: "none", color: "#000" }}
-                href="/epaper"
-              >
-                <li className={styles.MediaIco}>
-                  <Image
-                    src="/newspaper.svg"
-                    alt="newspapers"
-                    width={24}
-                    height={24}
-                  />
-                </li>
-              </Link>
-            </ul>
-          </div>
+                <Icon
+                  className={
+                    router.pathname === "/epaper"
+                      ? styles.iconicalsActive
+                      : styles.iconicals
+                  }
+                  icon={news24Regular}
+                />
+                <div
+                  className={
+                    router.pathname === "/epaper"
+                      ? styles.infosize2Active
+                      : styles.infosize2
+                  }
+                >
+                  ઇ-પેપર્સ
+                </div>
+              </li>
+            </Link>
+            <Link className={styles.GLockeditm} href="/epaper" passHref>
+              <li className={styles.MediaIco}>
+                <Icon icon={news24Regular} />
+              </li>
+            </Link>
+          </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
-// export default Nav;
 export default React.memo(Nav);

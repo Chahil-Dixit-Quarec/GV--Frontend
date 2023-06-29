@@ -10,24 +10,22 @@ import SocialMediaLeft from "../../Component/SocialMediaLeft/SocialMediaLeft";
 
 function FullNewsPost() {
   return (
-      <div className="HomePage">
-        <Nav />
-        <BreakingNews />
-        <div className="boundry">
-          <div className="LeftSection">
-            <LeftMenuBar />
-            <AppStore />
-          </div>
-          <div className="MiddleSection">
-            {/* <FullNews /> */}
-          </div>
-          <div className="RightSection">
-            <SocialMediaLeft />
-            <RightPhotoImage />
-            <ShortNews />
-          </div>
+    <div className="HomePage">
+      <Nav />
+      <BreakingNews />
+      <div className="boundry">
+        <div className="LeftSection">
+          <LeftMenuBar />
+          <AppStore />
+        </div>
+        <div className="MiddleSection">{/* <FullNews /> */}</div>
+        <div className="RightSection">
+          <SocialMediaLeft />
+          <RightPhotoImage />
+          <ShortNews />
         </div>
       </div>
+    </div>
   );
 }
 

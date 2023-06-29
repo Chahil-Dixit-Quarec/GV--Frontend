@@ -1,13 +1,9 @@
-/* Coming Soon Part   */
-/* .IUTYO {
-  width: 100%;
-} */
 .KHUGUTF {
   height: 10%;
-  min-height: 540px;
+  min-height: 480px;
   max-width: 280px;
   border-radius: 5px;
-  padding: 24px 0px 0px 24px;
+  margin-top: 46px;
 }
 
 .JKUv {
@@ -37,15 +33,15 @@
   height: 50px;
   position: absolute;
   margin-top: 250px;
-  margin-left: -145px;
+  margin-left: -160px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.63);
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   border-radius: 25px;
   cursor: pointer;
 }
 
-@media all and (max-width:1230px) {
+@media all and (max-width: 1230px) {
   /* .KHUGUTF {
     padding: 24px 20px 0px 0px;
   } */
@@ -59,7 +55,7 @@
   }
 }
 
-@media all and (max-width:1176px) {
+@media all and (max-width: 1176px) {
   .MKF9878 {
     margin-left: 145px;
     position: relative;
@@ -70,17 +66,13 @@
   }
 }
 
-@media all and (max-width:769px) {
+@media all and (max-width: 769px) {
   .IUTYO {
     display: none;
   }
 }
 
-
 /* Coming Soon Part   */
-
-
-
 
 /* .ShortNews {
   position: absolute;

@@ -37,10 +37,14 @@
     "underscore": "^1.13.6"
   },
   "devDependencies": {
+    "@iconify/icons-ant-design": "^1.2.5",
+    "@iconify/icons-ep": "^1.2.12",
+    "@iconify/icons-fluent": "^1.2.24",
+    "@iconify/icons-heroicons-outline": "^1.2.5",
     "@iconify/icons-ic": "^1.2.13",
     "@iconify/icons-mdi": "^1.2.44",
     "@iconify/icons-ph": "^1.2.4",
     "@iconify/icons-ri": "^1.2.7",
-    "@iconify/react": "^4.1.0"
+    "@iconify/react": "^4.1.1"
   }
 }
