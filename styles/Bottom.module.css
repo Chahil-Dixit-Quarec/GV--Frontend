@@ -13,12 +13,12 @@
   color: #808080;
 }
 .I86iuu:hover {
-  color: #F89C1D;
+  color: #f89c1d;
 }
 .selected {
-  color: #F89C1D;
+  color: #f89c1d;
 }
-@media all and (max-width:769px) {
+@media all and (max-width: 817px) {
   .IYMAIN {
     display: flex;
     text-align: center;
@@ -26,7 +26,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    background: #FFF;
+    background: #fff;
     width: 95%;
     z-index: 99;
     height: 33px;
@@ -46,19 +46,10 @@
     font-size: 12px;
   }
 }
-@media all and (max-width:450px) {
+@media all and (max-width: 450px) {
   .Bottom_IYMAIN__8xH5r {
     width: 95%;
     height: 24px;
     padding: 10px 5px 5px 5px;
   }
 }
-
-
-
-
-
-
-
-
-

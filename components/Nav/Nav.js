@@ -20,13 +20,6 @@ function Nav() {
         <div className={styles.logo}>
           <Link href="/">
             <div className={styles.imagescale}>
-              {/* <Image
-                className={styles.imgs}
-                src="/Logo.png"
-                width={278}
-                height={50}
-                alt="Logo"
-              /> */}
               <Image
                 className={styles.imgs}
                 src={Logo}
