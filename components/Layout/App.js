@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import styles from "../../styles/App.module.css";
 import Nav from "../Nav/Nav";
 import LeftMenuBar from "../LeftMenuBar/LeftMenuBar";
@@ -19,7 +19,9 @@ function App({ children }) {
           <div className={styles.LeftSection}>
             <LeftMenuBar />
           </div>
-          <div className={styles.MiddleSection}>{children}</div>
+          <div className={styles.MiddleSection}>
+            <div className={styles.paginationContainer}>{children}</div>
+          </div>
           <div className={styles.RightSection}>
             <RightPhotoImage />
           </div>

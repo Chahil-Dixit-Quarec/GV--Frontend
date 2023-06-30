@@ -1,111 +1,129 @@
 .MAbodyt {
-    height: 100vh !important;
+  height: 100vh !important;
 }
 
 .Tagbody {
-    height: auto;
-    margin-top: 4.2%;
-    display: flex;
+  height: auto;
+  margin-top: 4.2%;
+  display: flex;
 }
 
 .VideoBoundary {
-    width: 70%;
-    height: 100%;
-    max-height: auto;
-    max-width: 1000px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: auto;
+  width: 70%;
+  height: 100%;
+  max-height: auto;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: auto;
 }
 
 .boudriBlack {
-    background: linear-gradient(180deg, rgba(0, 0, 0, .1) 34.9%, rgba(0, 0, 0, .9) 70.83%, rgba(0, 0, 0, .79));
-    z-index: 100;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 34.9%,
+    rgba(0, 0, 0, 0.9) 70.83%,
+    rgba(0, 0, 0, 0.79)
+  );
+  z-index: 100;
 }
 
 .ImageBoundary {
-    height: 395px;
-    width: 222px;
-    padding: 1%;
+  height: 320px;
+  width: 222px;
+  padding: 1%;
+  margin-top: 10px;
 }
 
 .ImgBoundaries {
-    position: relative;
-    height: 50%;
+  position: relative;
+  height: 50%;
 }
 
 .textcontent {
-    position: absolute;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    top: 164%;
-    width: 94%;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 3%;
-    word-wrap: break-word;
-    background: linear-gradient(178deg, rgb(0 0 0 / 2%) 12.9%, rgba(0, 0, 0, 0.9) 98.83%, rgba(0, 0, 0, 1.9));
+  position: absolute;
+  height: 53%;
+  display: flex;
+  flex-direction: column;
+  top: 131%;
+  width: 94%;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 20px 7px 5px 7px;
+  word-wrap: break-word;
+  background: linear-gradient(
+    178deg,
+    rgb(0 0 0 / 2%) 0.9%,
+    rgba(0, 0, 0, 0.9) 60.83%,
+    rgba(0, 0, 0, 1.9)
+  );
+  overflow: hidden;
 }
 
 .tittle {
-    display: inline;
-    word-wrap: break-word
+  display: inline;
+  word-wrap: break-word;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Noto Sans Gujarati", sans-serif;
+  line-height: 17px;
+  height: 68px;
+  overflow: hidden;
 }
 
 .subtittle {
-    word-wrap: break-word;
-    color: white;
+  word-wrap: break-word;
+  color: white;
 }
 
 .parag {
-    display: block;
+  display: block;
 }
 
 .ef624bc1 {
-    align-items: center;
-    background: rgba(0, 0, 0, .6);
-    border: 1px solid rgba(0, 0, 0, .6);
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    height: 46px;
-    justify-content: center;
-    left: 50%;
-    margin: -24px;
-    position: absolute;
-    top: 100%;
-    width: 46px;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  left: 50%;
+  margin: -24px;
+  position: absolute;
+  top: 90%;
+  width: 40px;
 }
 
 .ImgBoundaries:hover .ef624bc1 {
-    border: 1px solid white;
+  border: 1px solid white;
 }
 
 .footer {
-    height: 1.2rem;
-    font-size: 12px;
-    width: 99%;
-    margin-top: 4%;
-    color: #bebebe;
-    bottom: -200px;
-    display: flex;
-    position: absolute;
-    bottom: 0;
+  height: 1.2rem;
+  font-size: 12px;
+  width: 99%;
+  margin-top: 4%;
+  color: #bebebe;
+  bottom: -200px;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  font-family: "Noto Sans Gujarati", sans-serif;
 }
 
 .Category {
-    display: flex;
-    position: absolute;
-    left: 0;
-    margin-left: 5%;
+  display: flex;
+  position: absolute;
+  left: 0;
 }
 
 .DateTime {
-    display: flex;
-    right: 0;
-    position: absolute;
-    margin-right: 5%;
+  display: flex;
+  right: 0;
+  position: absolute;
+  margin-right: 5%;
 }

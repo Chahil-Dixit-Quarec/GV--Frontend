@@ -6,14 +6,15 @@
 .HomePage {
   margin: 0 auto;
   max-width: 1280px;
+  height: 100%;
   position: relative;
   margin-top: 3%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .boundry {
   margin-right: 8%;
   height: 100%;
-  /* width: 100%; */
   display: flex;
   position: fixed;
 }
@@ -22,18 +23,18 @@
 }
 .LeftSection {
   flex: 1s;
-  /* height: 99%; */
+  height: 100%;
   position: -webkit-sticky;
   position: sticky;
 }
 .RightSection {
   flex: 1s;
   flex-basis: 20%;
-  /* height: 100%; */
+  height: 100%;
   margin-left: 2%;
 }
 .MiddleSection {
-  overflow-y: auto;
+  overflow-y: scroll;
   margin-top: 1.5%;
   height: 89vh;
 }
@@ -87,6 +88,9 @@
     height: 60px;
     margin-top: 8%;
   }
+  .MiddleSection {
+    height: 83vh;
+  }
 }
 @media all and (max-width: 564px) {
   .viewed {
@@ -120,10 +124,12 @@
 @media only screen and (max-width: 2000px) and (min-width: 1700px) {
   .MiddleSection {
     margin-top: 0.7%;
+    height: 100%;
   }
 }
 @media only screen and (max-width: 2700px) and (min-width: 2400px) {
   .MiddleSection {
     margin-top: 0%;
+    height: 87vh;
   }
 }
