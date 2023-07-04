@@ -8,7 +8,9 @@ import homeFilled from "@iconify/icons-ant-design/home-filled";
 import playIcon from "@iconify/icons-heroicons-outline/play";
 import sharpSearch from "@iconify/icons-ic/sharp-search";
 import news24Regular from "@iconify/icons-fluent/news-24-regular";
-import Logo from "./Asset.png";
+// import Logo from "./Asset.png";
+// import Logo from "./Asset01.png";
+import Logo from "./Asset02.png";
 
 function Nav() {
   const router = useRouter();

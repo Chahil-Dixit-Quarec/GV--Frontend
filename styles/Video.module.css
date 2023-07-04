@@ -4,19 +4,19 @@
 
 .Tagbody {
   height: auto;
-  margin-top: 4.2%;
+  /* margin-top: 4.2%; */
   display: flex;
 }
 
 .VideoBoundary {
-  width: 70%;
+  width: 90%;
   height: 100%;
   max-height: auto;
   max-width: 1000px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  margin: auto;
+  justify-content: center;
+  margin: 70px auto 0px auto;
 }
 
 .boudriBlack {

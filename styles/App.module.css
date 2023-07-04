@@ -13,10 +13,10 @@
   overflow-y: auto;
 }
 .boundry {
-  margin-right: 8%;
+  /* margin-right: 8%; */
   height: 100%;
   display: flex;
-  position: fixed;
+  /* position: fixed; */
 }
 .viewed {
   display: none;
@@ -24,8 +24,8 @@
 .LeftSection {
   flex: 1s;
   height: 100%;
-  position: -webkit-sticky;
-  position: sticky;
+  /* position: -webkit-sticky;
+  position: sticky; */
 }
 .RightSection {
   flex: 1s;
@@ -34,9 +34,9 @@
   margin-left: 2%;
 }
 .MiddleSection {
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-top: 1.5%;
-  height: 89vh;
+  height: 100%;
 }
 .MiddleSection::-webkit-scrollbar {
   display: none;
