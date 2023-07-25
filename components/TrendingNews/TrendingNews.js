@@ -40,7 +40,7 @@ function TrendingNews() {
             })
             .then(async (response) => {
                 if (response.data && response.data.response.length > 0) {
-                    await setResData(response.data.response);
+                    await setResData(response.data.response[0]);
                 }
             });
     }, []);
