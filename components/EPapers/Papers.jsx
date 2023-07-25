@@ -12,7 +12,7 @@ function Papers() {
     const [start, setStart] = useState(0);
     const [total, setTotal] = useState(0);
     const [threshold, setThreshold] = useState(0);
-    const pageSize = 18;
+    const pageSize = 30;
     const [pagination, setPagination] = useState(0);
 
     const download = (e) => {

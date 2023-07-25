@@ -1,13 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
 import {Inter} from "next/font/google";
 import App from "../components/Layout/App";
-import Nav from "../components/Nav/Nav";
-import LeftMenuBar from "@/components/LeftMenuBar/LeftMenuBar";
-import TrendingNews from "@/components/TrendingNews/TrendingNews";
 import NewsBlock from "@/components/NewsBlock/NewsBlock";
-import Bottom from "@/components/BottomNAV/Bottom";
-import img from "../public/favicon.png"
+
 const inter = Inter({subsets: ["latin"]});
 
 export default function Home() {
@@ -39,9 +34,12 @@ export default function Home() {
                         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2916945760362146"
                         crossorigin="anonymous"></script>
                 <meta name="google-site-verification" content="zGgHJz2irKeMA-BJqqQ2N9FK5NDP385rFy_SARY4eSo"/>
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+                />
             </Head>
             <App>
-                <TrendingNews/>
                 <NewsBlock value={{unique: true}}/>
             </App>
         </>

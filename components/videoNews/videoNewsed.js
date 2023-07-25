@@ -11,13 +11,8 @@ import {
     Facebook,
     HighlightOffOutlined,
     LinkSharp,
-    ShareOutlined,
-    Speaker,
     Twitter,
-    VolumeMute,
-    VolumeMuteRounded,
     VolumeOffRounded,
-    VolumeUpOutlined,
     VolumeUpRounded,
     WhatsApp
 } from "@material-ui/icons";
@@ -33,7 +28,6 @@ function VideoNewsed(props) {
     const [allVideos, setAllVideos] = useState([]);
     const [data, setData] = useState({});
     const [index, setIndex] = useState(0);
-    const [activateListener, setActivateListener] = useState(false);
 
     const [show, setShow] = useState(false);
     const [showClass, setShowClass] = useState('close');
@@ -98,30 +92,33 @@ function VideoNewsed(props) {
     const handlers = useSwipeable({
         onSwiped: async (eventData) => {
             let indexType = eventData.dir === 'Up' ? +1 : -1;
-            console.log('index type', indexType);
-            console.log('index', index);
-            console.log('index + index type', index + indexType);
-            console.log('all videos', allVideos);
             if (typeof allVideos[index + indexType] !== 'undefined') {
-                let tempArr = [];
-                if (eventData.dir === 'Down') {
-                    console.log('down')
-                    setData(previousVideos[previousVideos.length - 1]);
-                    setPreviousVideos(previousVideos.slice(0, -1));
-                    setIndex(index - 1);
-                } else {
-                    console.log('up');
-                    // setVideoName(encodeURIComponent(allVideos[index + indexType].NewsTittle))
-                    getVideoData(allVideos[index + indexType].NewsTittle)
-                    setPreviousVideos([...previousVideos, data]);
-                    // setData(allVideos[index + indexType]);
-                    setIndex(index + 1);
+                // eventData.event.srcElement.style.animation = 'slidey 3s';
+                const element = document.getElementById('video_div');
+                if (element) {
+                    element.classList.add('animate__animated', 'animate__bounceOutLeft');
+                    // element.scrollIntoView({behavior: 'smooth'});
                 }
-                await push({
-                    query: {
-                        videoNews: allVideos[index + indexType].NewsTittle
+                setTimeout(async () => {
+                    if (eventData.dir === 'Down') {
+                        console.log('down')
+                        setData(previousVideos[previousVideos.length - 1]);
+                        setPreviousVideos(previousVideos.slice(0, -1));
+                        setIndex(index - 1);
+                    } else {
+                        console.log('up');
+                        // setVideoName(encodeURIComponent(allVideos[index + indexType].NewsTittle))
+                        getVideoData(allVideos[index + indexType].NewsTittle)
+                        setPreviousVideos([...previousVideos, data]);
+                        // setData(allVideos[index + indexType]);
+                        setIndex(index + 1);
                     }
-                }, undefined, {shallow: true});
+                    await push({
+                        query: {
+                            videoNews: allVideos[index + indexType].NewsTittle
+                        }
+                    }, undefined, {shallow: true}, 1000);
+                })
                 // console.log(data);
             } else {
                 console.log('not here');
@@ -160,13 +157,13 @@ function VideoNewsed(props) {
                                 url: process.env.NEXT_PUBLIC_API_URL + data.ImagePath,
                                 width: 800,
                                 height: 600,
-                                alt: 'Og Image Alt',
+                                alt: data.NewsSubTittle,
                                 type: 'image/jpeg',
                             }, {url: process.env.NEXT_PUBLIC_API_URL + data.ImagePath},],
                             siteName: 'Gujarat Vandan',
                         }}
                     />
-                    <div className={styles.app__videos} ref={videoRefFn}>
+                    <div className={styles.app__videos} ref={videoRefFn} id='video_div'>
                         <div className={styles.video}>
                             <video className={styles.video__player} ref={refVideo}
                                    src={process.env.NEXT_PUBLIC_API_URL + data.VideoPath} loop

@@ -17,26 +17,25 @@ function Video() {
     const [index, setIndex] = useState(0);
 
     const handleClick = async (e) => {
+        console.log(e)
         await router.push({
             pathname: "/video/[videoNews]",
-            query: {videoNews: encodeURIComponent(e.NewsTittle)},
+            query: {videoNews: encodeURIComponent(e)},
             options: {shallow: true},
         });
     };
 
     useEffect(() => {
-        axios
-            .get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getAllVideoData")
-            .then(async (response) => {
-                console.log(response);
-                if (response.data.length > 0) {
-                    localStorage.setItem("videos", JSON.stringify(response.data));
-                    if (isMobile) {
-                        return handleClick(response.data[0]);
-                    }
-                    setRecived(response.data);
+        axios.get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getAllVideoHome").then(async (response) => {
+            console.log(response);
+            if (response.data.data.length > 0) {
+                localStorage.setItem("videos", JSON.stringify(response.data.data));
+                if (isMobile) {
+                    return handleClick(response.data.data[0].NewsTittle);
                 }
-            });
+                setRecived(response.data.data);
+            }
+        });
     }, []);
 
     return (

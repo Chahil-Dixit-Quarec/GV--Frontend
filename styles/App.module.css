@@ -1,135 +1,160 @@
 .datars {
-  display: inline-flex;
-  max-width: 100%;
-  flex-direction: row;
+    display: inline-flex;
+    max-width: 100%;
+    flex-direction: row;
 }
+
 .HomePage {
-  margin: 0 auto;
-  max-width: 1280px;
-  height: 100%;
-  position: relative;
-  margin-top: 3%;
-  overflow-x: hidden;
-  overflow-y: auto;
+    margin: 0 auto;
+    max-width: 1280px;
+    height: 100%;
+    position: relative;
+    margin-top: 3%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+
 .boundry {
   /* margin-right: 8%; */
   height: 100%;
   display: flex;
   /* position: fixed; */
 }
+
 .viewed {
-  display: none;
+    display: none;
 }
+
 .LeftSection {
   flex: 1s;
   height: 100%;
   /* position: -webkit-sticky;
   position: sticky; */
 }
+
 .RightSection {
-  flex: 1s;
-  flex-basis: 20%;
-  height: 100%;
-  margin-left: 2%;
+    flex: 1s;
+    flex-basis: 20%;
+    height: 100%;
+    margin-left: 2%;
 }
 .MiddleSection {
   overflow-y: auto;
   margin-top: 1.5%;
   height: 100%;
 }
+
 .MiddleSection::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
+
 .MiddleSection {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
 .Fun {
-  width: 60%;
+    width: 60%;
 }
+
 @media all and (min-width: 770px) and (max-width: 1025px) {
-  .RightSection {
-    display: none;
-  }
-  .boundry {
-    margin: 0%;
-  }
-  .HomePage {
-    margin-top: 8%;
-  }
+    .RightSection {
+        display: none;
+    }
+
+    .boundry {
+        margin: 0%;
+    }
+
+    .HomePage {
+        margin-top: 8%;
+    }
 }
+
 @media all and (min-width: 200px) and (max-width: 810px) {
-  .viewed {
-    overflow: hidden;
-    overflow-x: scroll;
-    margin-top: 12%;
-    display: inline-flex;
-    width: 100%;
-    height: 70px;
-  }
+    .viewed {
+        overflow: hidden;
+        overflow-x: scroll;
+        margin-top: 12%;
+        display: inline-flex;
+        width: 100%;
+        height: 70px;
+    }
 }
+
 @media all and (min-width: 183px) and (max-width: 810px) {
-  .LeftSection {
-    display: none;
-  }
-  .RightSection {
-    display: none;
-  }
-  .viewed {
-    margin-top: 6%;
-  }
-  .HomePage {
-    margin-top: 0%;
-  }
+    .LeftSection {
+        display: none;
+    }
+
+    .RightSection {
+        display: none;
+    }
+
+    .viewed {
+        margin-top: 6%;
+    }
+
+    .HomePage {
+        margin-top: 0%;
+    }
 }
+
 @media (max-width: 400px) {
-  .viewed {
-    height: 60px;
-    margin-top: 8%;
-  }
-  .MiddleSection {
-    height: 83vh;
-  }
+    .viewed {
+        height: 60px;
+        margin-top: 8%;
+    }
+
+    .MiddleSection {
+        height: 83vh;
+    }
 }
+
 @media all and (max-width: 564px) {
-  .viewed {
-    height: 60px;
-  }
+    .viewed {
+        height: 60px;
+    }
 }
+
 @media only screen and (min-width: 800px) and (max-width: 1025px) {
-  .boundry {
-    margin: 0%;
-  }
-  .MiddleSection {
-    margin-top: 0%;
-  }
+    .boundry {
+        margin: 0%;
+    }
+
+    .MiddleSection {
+        margin-top: 0%;
+    }
 }
+
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  .MiddleSection {
-    margin-top: 3.1%;
-  }
+    .MiddleSection {
+        margin-top: 3.1%;
+    }
 }
+
 @media all and (max-width: 1300px) {
-  .boundry {
-    margin-right: 1%;
-  }
+    .boundry {
+        margin-right: 1%;
+    }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1500px) {
-  .MiddleSection {
-    margin-top: 2%;
-  }
+    .MiddleSection {
+        margin-top: 2%;
+    }
 }
+
 @media only screen and (max-width: 2000px) and (min-width: 1700px) {
-  .MiddleSection {
-    margin-top: 0.7%;
-    height: 100%;
-  }
+    .MiddleSection {
+        margin-top: 0.7%;
+        height: 100%;
+    }
 }
+
 @media only screen and (max-width: 2700px) and (min-width: 2400px) {
-  .MiddleSection {
-    margin-top: 0%;
-    height: 87vh;
-  }
+    .MiddleSection {
+        margin-top: 0%;
+        height: 87vh;
+    }
 }

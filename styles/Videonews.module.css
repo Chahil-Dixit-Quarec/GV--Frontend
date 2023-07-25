@@ -322,3 +322,11 @@ Video Page Modification CSS
     margin: 12px 0;
     animation: close 0.1s linear 0.1s forwards;
 }
+
+@-webkit-keyframes slidey {
+  100%{ transform: translateY(-75%); }
+}
+
+@keyframes slidey {
+  100%{ transform: translateY(-100%); }
+}
