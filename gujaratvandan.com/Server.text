@@ -1,0 +1,8 @@
+1. ssh root@156.67.219.205
+2. Password - Quarec@17
+3. cd /var/www/gujaratvandan.com/
+4. git pull
+5. Username : chahil.quarec@gmail.com
+   Password : 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
+6. After Pull - npm run build
+7. After successfull Build - pm2 reload ecosystem.config.js

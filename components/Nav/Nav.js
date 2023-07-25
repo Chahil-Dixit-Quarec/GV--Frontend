@@ -10,7 +10,8 @@ import sharpSearch from "@iconify/icons-ic/sharp-search";
 import news24Regular from "@iconify/icons-fluent/news-24-regular";
 // import Logo from "./Asset.png";
 // import Logo from "./Asset01.png";
-import Logo from "./Asset02.png";
+// import Logo from "./Asset02.png";
+import Logo from "./Logo1.png";
 
 function Nav() {
   const router = useRouter();
