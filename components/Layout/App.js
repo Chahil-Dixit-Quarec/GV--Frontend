@@ -16,15 +16,21 @@ function App({ children }) {
       </div>
       <div className={styles.HomePage}>
         <div className={styles.boundry}>
+          {/* Left */}
           <div className={styles.LeftSection}>
             <LeftMenuBar />
           </div>
+          {/* Left */}
+          {/* Mid */}
           <div className={styles.MiddleSection}>
             <div className={styles.paginationContainer}>{children}</div>
           </div>
+          {/* Mid */}
+          {/* Right */}
           <div className={styles.RightSection}>
             <RightPhotoImage />
           </div>
+          {/* Right */}
         </div>
       </div>
       <Bottom />
