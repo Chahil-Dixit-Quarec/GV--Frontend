@@ -4,6 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import _, { map } from "underscore";
+import Paper from "./IMG/new.png";
 
 function Papers() {
   const router = useRouter();
@@ -12,7 +13,7 @@ function Papers() {
   const [start, setStart] = useState(0);
   const [total, setTotal] = useState(0);
   const [threshold, setThreshold] = useState(0);
-  const pageSize = 30;
+  const pageSize = 50;
   const [pagination, setPagination] = useState(0);
 
   const download = (e) => {
@@ -81,7 +82,12 @@ function Papers() {
 
   return (
     <>
+      <div className={styles.defult}></div>
       <div className={styles.EPapers}>
+        <h2 className={styles.textfo}>ઈ-ન્યુઝ પેપર્સ</h2>
+      </div>
+
+      {/* <div className={styles.EPapers}>
         <h2>ઈ-ન્યુઝ પેપર્સ</h2>
       </div>
       <div className={styles.Collection}>
@@ -103,7 +109,27 @@ function Papers() {
           </div>
         ))}
       </div>
-      {total > 0 && <div ref={observerTarget}></div>}
+      {total > 0 && <div ref={observerTarget}></div>} */}
+      <div className={styles.mainepapers}>
+        {newsData.map((news, index) => (
+          <div className={styles.Papers} key={index}>
+            <div onClick={(e) => download(news.Path)} className={styles.block}>
+              <Image
+                src={process.env.NEXT_PUBLIC_API_URL + `${news.PosterPath}`}
+                className={styles.PaperIMG}
+                alt=""
+                height="121"
+                width="195"
+              />
+              <p className={styles.details}>
+                તારીખ: {news.NewsPaperDate}
+                <br />
+                દિવસ: {news.Day ? news.Day : "રવિવાર"}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

@@ -37,6 +37,7 @@ function FullNews(props) {
 
   return (
     <>
+      <div className={styles.static}></div>
       <div className={styles.datt}>
         <div className={styles.FullNews}>
           <div className={styles.NewsContent}>

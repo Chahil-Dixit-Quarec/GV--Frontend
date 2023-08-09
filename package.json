@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@iconify/icons-ant-design": "^1.2.5",
+    "@iconify/icons-eos-icons": "^1.2.6",
     "@iconify/icons-ep": "^1.2.12",
     "@iconify/icons-fluent": "^1.2.24",
     "@iconify/icons-heroicons-outline": "^1.2.5",

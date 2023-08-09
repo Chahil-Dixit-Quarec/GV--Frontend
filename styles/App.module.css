@@ -1,17 +1,17 @@
 .datars {
-    display: inline-flex;
-    max-width: 100%;
-    flex-direction: row;
+  display: inline-flex;
+  max-width: 100%;
+  flex-direction: row;
 }
 
 .HomePage {
-    margin: 0 auto;
-    max-width: 1280px;
-    height: 100%;
-    position: relative;
-    margin-top: 3%;
-    overflow-x: hidden;
-    overflow-y: auto;
+  margin: 0 auto;
+  max-width: 1280px;
+  height: 100%;
+  position: relative;
+  margin-top: 3%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .boundry {
@@ -22,7 +22,7 @@
 }
 
 .viewed {
-    display: none;
+  display: none;
 }
 
 .LeftSection {
@@ -33,10 +33,10 @@
 }
 
 .RightSection {
-    flex: 1s;
-    flex-basis: 20%;
-    height: 100%;
-    margin-left: 2%;
+  flex: 1s;
+  flex-basis: 20%;
+  height: 100%;
+  margin-left: 2%;
 }
 .MiddleSection {
   overflow-y: auto;
@@ -45,19 +45,19 @@
 }
 
 .MiddleSection::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .MiddleSection {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .Fun {
-    width: 60%;
+  width: 60%;
 }
 
-@media all and (min-width: 770px) and (max-width: 1025px) {
+/* @media all and (min-width: 770px) and (max-width: 1025px) {
     .RightSection {
         display: none;
     }
@@ -157,4 +157,4 @@
         margin-top: 0%;
         height: 87vh;
     }
-}
+} */

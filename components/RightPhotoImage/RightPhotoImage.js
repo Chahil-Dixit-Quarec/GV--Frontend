@@ -3,6 +3,7 @@ import axios from "axios";
 import styles from "../../styles/RightPhotoImage.module.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Defult from "../Defult";
 
 function RightPhotoImage(name) {
   const router = useRouter();
@@ -32,6 +33,7 @@ function RightPhotoImage(name) {
           handleClick(videoData.NewsTittle);
         }}
       >
+        <Defult />
         <Image
           className={styles.KHUGUTF}
           src={process.env.NEXT_PUBLIC_API_URL + videoData?.ImagePath}
@@ -39,8 +41,8 @@ function RightPhotoImage(name) {
           width="280"
           height="540"
         />
-        {/*<p className={styles.JKUv}>વીડિયો</p>*/}
-        {/*<p className={styles.MKF9878}>વધુ જુઓ</p>*/}
+        {/* <p className={styles.JKUv}>વીડિયો</p> */}
+        {/* <p className={styles.MKF9878}>વધુ જુઓ</p> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="50"

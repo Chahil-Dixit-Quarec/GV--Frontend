@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "../../styles/App.module.css";
+// import styles from "../../styles/App.module.css";
+import styles from "../../styles/Pag.module.css";
 import Nav from "../Nav/Nav";
 import LeftMenuBar from "../LeftMenuBar/LeftMenuBar";
 import Bottom from "../BottomNAV/Bottom";
@@ -9,28 +10,36 @@ function App({ children }) {
   return (
     <>
       <Nav />
-      <div className={styles.viewed}>
+      {/* <div className={styles.viewed}>
         <div className={styles.datars}>
           <LeftMenuBar />
         </div>
       </div>
       <div className={styles.HomePage}>
         <div className={styles.boundry}>
-          {/* Left */}
           <div className={styles.LeftSection}>
             <LeftMenuBar />
           </div>
-          {/* Left */}
-          {/* Mid */}
           <div className={styles.MiddleSection}>
             <div className={styles.paginationContainer}>{children}</div>
           </div>
-          {/* Mid */}
-          {/* Right */}
           <div className={styles.RightSection}>
             <RightPhotoImage />
           </div>
-          {/* Right */}
+        </div>
+      </div> */}
+      {/* ********** */}
+      {/* ********** */}
+      {/* ********** */}
+      {/* new */}
+      {/* new */}
+      <div className={styles.Mainboundarys}>
+        <div className={styles.LeFtSec}>
+          <LeftMenuBar />
+        </div>
+        <div className={styles.MidSec}>{children}</div>
+        <div className={styles.RigHtSec}>
+          <RightPhotoImage />
         </div>
       </div>
       <Bottom />

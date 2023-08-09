@@ -48,6 +48,7 @@ function TrendingNews() {
   return (
     <>
       <ToastContainer />
+      <div className={styles.static}></div>
       <div className={styles.FullHead}>
         <div
           onClick={(e) => {

@@ -5,7 +5,9 @@
   padding: 20px 20px 8px;
   cursor: pointer;
 }
-
+.static {
+  height: 80px;
+}
 .idcolor {
   color: #ff554b;
 }
@@ -113,5 +115,15 @@
   }
   .Imges {
     height: 230px;
+  }
+}
+@media all and (max-width: 800px) {
+  .static {
+    height: 120px;
+  }
+}
+@media all and (max-width: 650px) {
+  .static {
+    height: 100px;
   }
 }

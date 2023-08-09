@@ -161,6 +161,21 @@
   border: none;
   border-radius: 7%;
 }
+/* Preloader */
+.PreLoader {
+  text-align: center;
+  font-size: 70px !important;
+  color: #fd8e40;
+  margin: 0;
+  padding: 0;
+}
+.Mainkloders {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+/* Preloader */
 
 @media all and (min-width: 360px) and (max-width: 532px) {
   .BlockHead {

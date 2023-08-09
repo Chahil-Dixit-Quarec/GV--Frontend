@@ -9,10 +9,11 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-// import InfiniteScroll from 'react-infinite-scroller';
 import InfiniteScroll from "react-infinite-scroll-component";
 import _, { map } from "underscore";
 import TrendingNews from "@/components/TrendingNews/TrendingNews";
+import { Icon } from "@iconify/react";
+import threeDotsLoading from "@iconify/icons-eos-icons/three-dots-loading";
 
 function NewsBlock(props) {
   const [newsDatas, setNewsDatas] = useState([]);
@@ -20,7 +21,7 @@ function NewsBlock(props) {
   const [start, setStart] = useState(0);
   const [total, setTotal] = useState(0);
   const [threshold, setThreshold] = useState(0);
-  const pageSize = 80;
+  const pageSize = 30;
   const [pagination, setPagination] = useState(0);
   const facebookClick = (url) => {
     const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
@@ -91,8 +92,8 @@ function NewsBlock(props) {
             setTotal(response.data.total);
             setStart(start + 1);
             console.log(start, "start");
-            setThreshold(Math.ceil(response.data.total / 10));
-            console.log(Math.ceil(response.data.total / 10));
+            setThreshold(Math.ceil(response.data.total / 30));
+            console.log(Math.ceil(response.data.total / 30));
           } else {
             console.log("else");
           }
@@ -172,8 +173,10 @@ function NewsBlock(props) {
   }, [props.value.unique, props.value.data, observerTarget, start]);
 
   const loadMore = (
-    <div key={0}>
-      <span style={{ textAlign: "center" }}>Loading...</span>
+    <div className={styles.Mainkloders}>
+      <span className={styles.PreLoader}>
+        <Icon icon={threeDotsLoading} />
+      </span>
     </div>
   );
 

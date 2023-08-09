@@ -1,3 +1,6 @@
+.static {
+  height: 70px;
+}
 .datt {
   border: 1px solid #eaeaea;
   padding: 1%;
@@ -49,10 +52,10 @@
 
 .NewsContent h1 {
   font-size: 18px;
-  line-height: 36px;
+  line-height: 30px;
   margin-bottom: 10px;
   margin-left: 10px;
-  margin-top: 20px;
+  margin-top: 0px;
   font-weight: 600;
 }
 
@@ -78,6 +81,16 @@
   font-family: "Noto Sans Gujarati", sans-serif;
   color: #2b2b2b;
   margin: 10px;
+}
+@media all and (max-width: 800px) {
+  .static {
+    height: 120px;
+  }
+}
+@media all and (max-width: 650px) {
+  .static {
+    height: 80px;
+  }
 }
 /* 
 @media all and (max-width: 2000px) {

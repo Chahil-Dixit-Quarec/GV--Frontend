@@ -15,6 +15,7 @@ import Business from "./ICO/Business.svg";
 import Magazine from "./ICO/Magazine.svg";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Defult from "../Defult";
 
 function LeftMenuBar() {
   const router = useRouter();
@@ -27,6 +28,7 @@ function LeftMenuBar() {
   console.log(resData);
   return (
     <div className={styles.categorysection}>
+      <Defult />
       <>
         <div
           className={styles.category}
