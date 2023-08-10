@@ -22,6 +22,11 @@ function Papers() {
       query: { item: process.env.NEXT_PUBLIC_API_URL + e },
     });
   };
+  let record = newsData.sort(
+    (a, b) =>
+      new Date(...a.NewsPaperDate.split("-").reverse()) -
+      new Date(...b.NewsPaperDate.split("-").reverse())
+  );
 
   const getData = async () => {
     let startPage = pageSize * start;
@@ -111,24 +116,30 @@ function Papers() {
       </div>
       {total > 0 && <div ref={observerTarget}></div>} */}
       <div className={styles.mainepapers}>
-        {newsData.map((news, index) => (
-          <div className={styles.Papers} key={index}>
-            <div onClick={(e) => download(news.Path)} className={styles.block}>
-              <Image
-                src={process.env.NEXT_PUBLIC_API_URL + `${news.PosterPath}`}
-                className={styles.PaperIMG}
-                alt=""
-                height="121"
-                width="195"
-              />
-              <p className={styles.details}>
-                તારીખ: {news.NewsPaperDate}
-                <br />
-                દિવસ: {news.Day ? news.Day : "રવિવાર"}
-              </p>
+        {record
+          .slice(0)
+          .reverse()
+          .map((news, index) => (
+            <div className={styles.Papers} key={index}>
+              <div
+                onClick={(e) => download(news.Path)}
+                className={styles.block}
+              >
+                <Image
+                  src={process.env.NEXT_PUBLIC_API_URL + `${news.PosterPath}`}
+                  className={styles.PaperIMG}
+                  alt=""
+                  height="121"
+                  width="195"
+                />
+                <p className={styles.details}>
+                  તારીખ: {news.NewsPaperDate}
+                  <br />
+                  દિવસ: {news.Day ? news.Day : "રવિવાર"}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </>
   );
