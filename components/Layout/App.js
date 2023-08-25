@@ -1,5 +1,5 @@
-import React from "react";
-// import styles from "../../styles/App.module.css";
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 import styles from "../../styles/Pag.module.css";
 import Nav from "../Nav/Nav";
 import LeftMenuBar from "../LeftMenuBar/LeftMenuBar";
@@ -7,32 +7,27 @@ import Bottom from "../BottomNAV/Bottom";
 import RightPhotoImage from "@/components/RightPhotoImage/RightPhotoImage";
 
 function App({ children }) {
+  const router = useRouter();
+  // useEffect(() => {
+  //   const handleRouteChange = () => {
+  //     document.getElementById("top").scrollIntoView();
+  //   };
+  //   router.events.on("routeChangeComplete", handleRouteChange);
+  // }, []);
+  useEffect(() => {
+    const handleRouteChange = () => {
+      document.getElementById("top").scrollIntoView();
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
+
   return (
     <>
+      <div id="top" />
       <Nav />
-      {/* <div className={styles.viewed}>
-        <div className={styles.datars}>
-          <LeftMenuBar />
-        </div>
-      </div>
-      <div className={styles.HomePage}>
-        <div className={styles.boundry}>
-          <div className={styles.LeftSection}>
-            <LeftMenuBar />
-          </div>
-          <div className={styles.MiddleSection}>
-            <div className={styles.paginationContainer}>{children}</div>
-          </div>
-          <div className={styles.RightSection}>
-            <RightPhotoImage />
-          </div>
-        </div>
-      </div> */}
-      {/* ********** */}
-      {/* ********** */}
-      {/* ********** */}
-      {/* new */}
-      {/* new */}
       <div className={styles.Mainboundarys}>
         <div className={styles.LeFtSec}>
           <LeftMenuBar />

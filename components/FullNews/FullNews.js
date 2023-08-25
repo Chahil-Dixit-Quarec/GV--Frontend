@@ -8,6 +8,7 @@ function MyComponent({ htmlContent }) {
 }
 
 function FullNews(props) {
+  const hideTrendingNews = true;
   console.log("para", props.value.data);
   const [newsData, setNewsData] = useState({});
   const [image, setImage] = useState("");
@@ -63,7 +64,9 @@ function FullNews(props) {
           <h1 className={styles.gu78}>અન્ય સમાચારો પણ છે...</h1>
         </div>
       </div>
-      <NewsBlock value={{ unique: true }} />
+      {/* <NewsBlock value={{ unique: true }} /> */}
+      {/* <NewsBlock value={{ unique: true }} showTrendingNews={false} /> */}
+      <NewsBlock value={{ unique: true }} hideTrendingNews={hideTrendingNews} />
     </>
   );
 }

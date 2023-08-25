@@ -182,7 +182,9 @@ function NewsBlock(props) {
 
   return (
     <div ref={listInnerRef}>
-      <TrendingNews />
+      {/* <TrendingNews /> */}
+      {/* {props.showTrendingNews && <TrendingNews />} */}
+      {!props.hideTrendingNews && <TrendingNews />}
       <ToastContainer />
       {dataStatus === "success" && (
         <>
