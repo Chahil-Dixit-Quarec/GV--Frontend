@@ -44,6 +44,22 @@ function TrendingNews() {
         }
       });
   }, []);
+  function formatDate(date) {
+    const options = {
+      day: "2-digit",
+      month: "short",
+      year: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true, // Use 12-hour time format
+    };
+
+    const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(
+      date
+    );
+
+    return formattedDate.toUpperCase(); // Convert to uppercase
+  }
 
   return (
     <>
@@ -70,7 +86,7 @@ function TrendingNews() {
             <br />
             <span>{resData?.NewsSubTittle}</span>
           </h3>
-          <p className={styles.dateandtime}>
+          {/* <p className={styles.dateandtime}>
             {resData?.CreatedDate
               ? new Date(resData.CreatedDate).toLocaleString("en-GB", {
                   day: "2-digit",
@@ -80,6 +96,11 @@ function TrendingNews() {
                   minute: "2-digit",
                   second: "2-digit",
                 })
+              : ""}
+          </p> */}
+          <p className={styles.dateandtime}>
+            {resData?.CreatedDate
+              ? formatDate(new Date(resData.CreatedDate))
               : ""}
           </p>
 

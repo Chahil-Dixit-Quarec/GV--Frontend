@@ -83,10 +83,12 @@
   margin: 10px;
 }
 .dateandtime {
-  color: black;
-  font-family: "Noto Sans Gujarati", sans-serif;
+  text-transform: uppercase;
   text-align: right;
+  font-family: "poppins", sans-serif;
   font-size: 14px;
+  font-weight: 400;
+  color: #333333;
 }
 @media all and (max-width: 800px) {
   .static {

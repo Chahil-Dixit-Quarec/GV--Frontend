@@ -39,9 +39,22 @@ function FullNews(props) {
       });
   }, [props.value.data]);
 
-  function formatDate(dateString) {
-    const options = { day: "2-digit", month: "2-digit", year: "2-digit" };
-    return new Date(dateString).toLocaleDateString("en-GB", options);
+  function formatDate2(dateString) {
+    const options = {
+      day: "2-digit",
+      month: "short",
+      year: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true, // Use 12-hour time format
+    };
+
+    const formattedDate = new Date(dateString).toLocaleDateString(
+      "en-GB",
+      options
+    );
+
+    return formattedDate.toUpperCase(); // Convert to uppercase
   }
 
   return (
@@ -58,18 +71,11 @@ function FullNews(props) {
             </h1>
           </div>
         </div>
+
         <p className={styles.dateandtime}>
-          {date12
-            ? new Date(date12).toLocaleString("en-GB", {
-                day: "2-digit",
-                month: "2-digit",
-                year: "2-digit",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-              })
-            : ""}
+          {date12 ? formatDate2(date12) : ""}
         </p>
+
         <div className={styles.ImgSection}>
           <Image
             src={process.env.NEXT_PUBLIC_API_URL + `${image}`}
