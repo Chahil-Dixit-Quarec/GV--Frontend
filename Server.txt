@@ -1,4 +1,4 @@
-Gujarat Vandan Live Process
+Gujarat Vandan Live
 
 1. ssh root@156.67.219.205
 2. Password - Quarec@17
