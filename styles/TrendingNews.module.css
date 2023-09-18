@@ -56,6 +56,12 @@
   height: 24px;
   width: 24px;
 }
+.dateandtime {
+  color: black;
+  font-family: "Noto Sans Gujarati", sans-serif;
+  text-align: right;
+  font-size: 14px;
+}
 /* 
 @media all and (min-width: 360px) and (max-width: 480px) {
   .FullHead {

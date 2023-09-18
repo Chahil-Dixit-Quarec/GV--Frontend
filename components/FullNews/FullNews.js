@@ -17,6 +17,7 @@ function FullNews(props) {
   const [news, setNews] = useState("");
   const [colored, setColored] = useState("");
   const [id, setId] = useState("");
+  const [date12, setDate12] = useState(""); // New state for Date12
 
   console.log("id", id);
   useEffect(() => {
@@ -25,7 +26,8 @@ function FullNews(props) {
         data: props.value.data,
       })
       .then(async (response) => {
-        console.log("new", response.data.response[0]);
+        // console.log("new", response.data.response[0]);
+        // console.log("Date12", response.data.response[0].CreatedDate);
         await setNewsData(response.data.response);
         await setImage(response.data.response[0].Path);
         await setTittle(response.data.response[0].NewsTittle);
@@ -33,8 +35,14 @@ function FullNews(props) {
         await setSubTittle(response.data.response[0].NewsSubTittle);
         await setColored(response.data.response[0].Colored);
         await setId(response.data.response[0]._id);
+        setDate12(response.data.response[0].CreatedDate);
       });
   }, [props.value.data]);
+
+  function formatDate(dateString) {
+    const options = { day: "2-digit", month: "2-digit", year: "2-digit" };
+    return new Date(dateString).toLocaleDateString("en-GB", options);
+  }
 
   return (
     <>
@@ -50,7 +58,18 @@ function FullNews(props) {
             </h1>
           </div>
         </div>
-
+        <p className={styles.dateandtime}>
+          {date12
+            ? new Date(date12).toLocaleString("en-GB", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+              })
+            : ""}
+        </p>
         <div className={styles.ImgSection}>
           <Image
             src={process.env.NEXT_PUBLIC_API_URL + `${image}`}

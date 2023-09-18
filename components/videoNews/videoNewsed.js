@@ -36,14 +36,6 @@ function VideoNewsed(props) {
 
   useEffect(() => {
     console.log("called");
-    // axios.get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getVideo", {
-    //     params: {
-    //         name: decodeURIComponent(videoNews)
-    //     }
-    // }).then(async (response) => {
-    //     setData(response.data.data)
-    //     setVideoName(router.query.videoNews)
-    // });
     getVideoData(decodeURIComponent(videoNews));
     setTimeout(() => {
       getAllVideos();
@@ -55,7 +47,6 @@ function VideoNewsed(props) {
       .get(process.env.NEXT_PUBLIC_API_BASE_URL + "/getAllVideoDataId")
       .then(async (response) => {
         let data = response.data;
-        // await data.shift()
         await setAllVideos(data);
       });
   };
@@ -69,7 +60,6 @@ function VideoNewsed(props) {
       })
       .then(async (response) => {
         setData(response.data.data);
-        // setVideoName(router.query.videoNews)
       });
   };
 
@@ -92,8 +82,6 @@ function VideoNewsed(props) {
     }
     refVideo.current.muted = !videoMute;
   };
-
-  // Below code is for video slide like instagram reels in mobile view
   const videoRef = React.useRef();
   const videoRefFn = (el) => {
     handlers.ref(el);
@@ -103,11 +91,13 @@ function VideoNewsed(props) {
     onSwiped: async (eventData) => {
       let indexType = eventData.dir === "Up" ? +1 : -1;
       if (typeof allVideos[index + indexType] !== "undefined") {
-        // eventData.event.srcElement.style.animation = 'slidey 3s';
+        eventData.event.srcElement.style.animation = "none";
+        eventData.event.srcElement.offsetHeight;
+        eventData.event.srcElement.style.animation = "slidey 1s";
         const element = document.getElementById("video_div");
         if (element) {
           element.classList.add("animate__animated", "animate__bounceOutLeft");
-          // element.scrollIntoView({behavior: 'smooth'});
+          element.scrollIntoView({ behavior: "smooth" });
         }
         setTimeout(async () => {
           if (eventData.dir === "Down") {
@@ -117,10 +107,8 @@ function VideoNewsed(props) {
             setIndex(index - 1);
           } else {
             console.log("up");
-            // setVideoName(encodeURIComponent(allVideos[index + indexType].NewsTittle))
             getVideoData(allVideos[index + indexType].NewsTittle);
             setPreviousVideos([...previousVideos, data]);
-            // setData(allVideos[index + indexType]);
             setIndex(index + 1);
           }
           await push(
@@ -134,7 +122,6 @@ function VideoNewsed(props) {
             1000
           );
         });
-        // console.log(data);
       } else {
         console.log("not here");
       }
@@ -189,7 +176,7 @@ function VideoNewsed(props) {
                 src={process.env.NEXT_PUBLIC_API_URL + data.VideoPath}
                 loop
                 autoPlay
-                controls
+                // controls
                 disablePictureInPicture
                 playsInline
                 controlsList="nodownload"
@@ -240,11 +227,11 @@ function VideoNewsed(props) {
                 ref={divRef}
               >
                 <div className={`${styles.videoFooter__text}`}>
-                  <h3>{data.NewsTittle}</h3>
+                  <h3 className={styles.Btittle}>{data.NewsTittle}</h3>
                   <p className={styles.videoFooter__description}>
                     {data.NewsSubTittle}
                   </p>
-                  <p>
+                  <p className={styles.videoFooter__description}>
                     <TimeAgo date={data.CreatedDate} formatter={formatter} />
                   </p>
                 </div>

@@ -66,10 +66,23 @@ function TrendingNews() {
               style={{ color: resData?.Colored ? resData?.Colored : "#000000" }}
             >
               {resData?.NewsTittle}
-            </span>{" "}
+            </span>
             <br />
             <span>{resData?.NewsSubTittle}</span>
           </h3>
+          <p className={styles.dateandtime}>
+            {resData?.CreatedDate
+              ? new Date(resData.CreatedDate).toLocaleString("en-GB", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "2-digit",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  second: "2-digit",
+                })
+              : ""}
+          </p>
+
           <div className={styles.Imges}>
             <Image
               fill
